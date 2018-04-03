@@ -1,7 +1,7 @@
 # Review Signoffs
 
 ## Lead
-- [ ] Name
+- [x] Name
 
 ## Teams
 - [ ] Team 1
