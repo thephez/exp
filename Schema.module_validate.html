@@ -1,0 +1,4656 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Schema.validate - Documentation</title>
+
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="DAPI.html">DAPI</a><ul class='methods'><li data-type='method'><a href="DAPI.html#.VMNDAPIAdapter#GetUserByName">VMNDAPIAdapter#GetUserByName</a></li><li data-type='method'><a href="DAPI.html#.VMNDAPIAdapter#GetDapSpace">VMNDAPIAdapter#GetDapSpace</a></li><li data-type='method'><a href="DAPI.html#.VMNDAPIAdapter#UpdateDapSpace">VMNDAPIAdapter#UpdateDapSpace</a></li><li data-type='method'><a href="DAPI.html#getUTXO">getUTXO</a></li><li data-type='method'><a href="DAPI.html#getBalance">getBalance</a></li><li data-type='method'><a href="DAPI.html#getUserByName">getUserByName</a></li><li data-type='method'><a href="DAPI.html#getUserById">getUserById</a></li><li data-type='method'><a href="DAPI.html#sendRawTransaction">sendRawTransaction</a></li><li data-type='method'><a href="DAPI.html#sendRawTransition">sendRawTransition</a></li><li data-type='method'><a href="DAPI.html#getBestBlockHeight">getBestBlockHeight</a></li><li data-type='method'><a href="DAPI.html#getBlockHash">getBlockHash</a></li><li data-type='method'><a href="DAPI.html#getBlockHeaders">getBlockHeaders</a></li><li data-type='method'><a href="DAPI.html#generate">generate</a></li><li data-type='method'><a href="DAPI.html#_onNewBlock">_onNewBlock</a></li><li data-type='method'><a href="DAPI.html#CreateUser">CreateUser</a></li><li data-type='method'><a href="DAPI.html#GetUserByName">GetUserByName</a></li><li data-type='method'><a href="DAPI.html#GetUserById">GetUserById</a></li><li data-type='method'><a href="DAPI.html#SearchUsers">SearchUsers</a></li><li data-type='method'><a href="DAPI.html#GetDapSpace">GetDapSpace</a></li><li data-type='method'><a href="DAPI.html#UpdateDapSpace">UpdateDapSpace</a></li></ul></li><li><a href="module-MNDiscoveryService-MNDiscovery.html">MNDiscovery</a><ul class='methods'><li data-type='method'><a href="module-MNDiscoveryService-MNDiscovery.html#getRandomMasternode">getRandomMasternode</a></li><li data-type='method'><a href="module-MNDiscoveryService-MNDiscovery.html#getMNList">getMNList</a></li></ul></li><li><a href="Storage.html">Storage</a><ul class='methods'><li data-type='method'><a href="Storage.html#initDb">initDb</a></li><li data-type='method'><a href="Storage.html#getCollection">getCollection</a></li><li data-type='method'><a href="Storage.html#insertOne">insertOne</a></li><li data-type='method'><a href="Storage.html#insertMany">insertMany</a></li><li data-type='method'><a href="Storage.html#findAll">findAll</a></li><li data-type='method'><a href="Storage.html#findOne">findOne</a></li><li data-type='method'><a href="Storage.html#updateMany">updateMany</a></li><li data-type='method'><a href="Storage.html#updateOne">updateOne</a></li><li data-type='method'><a href="Storage.html#remove">remove</a></li></ul></li><li><a href="ArrayBlockIterator.html">ArrayBlockIterator</a><ul class='methods'><li data-type='method'><a href="ArrayBlockIterator.html#reset">reset</a></li><li data-type='method'><a href="ArrayBlockIterator.html#next">next</a></li></ul></li><li><a href="RpcBlockIterator.html">RpcBlockIterator</a><ul class='methods'><li data-type='method'><a href="RpcBlockIterator.html#setBlockHeight">setBlockHeight</a></li><li data-type='method'><a href="RpcBlockIterator.html#getBlockHeight">getBlockHeight</a></li><li data-type='method'><a href="RpcBlockIterator.html#reset">reset</a></li><li data-type='method'><a href="RpcBlockIterator.html#next">next</a></li></ul></li><li><a href="StateTransitionHeaderIterator.html">StateTransitionHeaderIterator</a><ul class='methods'><li data-type='method'><a href="StateTransitionHeaderIterator.html#reset">reset</a></li><li data-type='method'><a href="StateTransitionHeaderIterator.html#next">next</a></li></ul></li><li><a href="STHeadersReader.html">STHeadersReader</a><ul class='methods'><li data-type='method'><a href="STHeadersReader.html#read">read</a></li><li data-type='method'><a href="STHeadersReader.html#getState">getState</a></li></ul></li><li><a href="STHeadersReaderState.html">STHeadersReaderState</a><ul class='methods'><li data-type='method'><a href="STHeadersReaderState.html#setBlocks">setBlocks</a></li><li data-type='method'><a href="STHeadersReaderState.html#addBlock">addBlock</a></li><li data-type='method'><a href="STHeadersReaderState.html#getLastBlock">getLastBlock</a></li><li data-type='method'><a href="STHeadersReaderState.html#removeLastBlock">removeLastBlock</a></li><li data-type='method'><a href="STHeadersReaderState.html#getBlocks">getBlocks</a></li><li data-type='method'><a href="STHeadersReaderState.html#getBlocksLimit">getBlocksLimit</a></li><li data-type='method'><a href="STHeadersReaderState.html#setBlocksLimit">setBlocksLimit</a></li><li data-type='method'><a href="STHeadersReaderState.html#clear">clear</a></li></ul></li><li><a href="DapContract.html">DapContract</a><ul class='methods'><li data-type='method'><a href="DapContract.html#toJSON">toJSON</a></li></ul></li><li><a href="DapContractMongoDbRepository.html">DapContractMongoDbRepository</a><ul class='methods'><li data-type='method'><a href="DapContractMongoDbRepository.html#find">find</a></li><li data-type='method'><a href="DapContractMongoDbRepository.html#store">store</a></li></ul></li><li><a href="DapObject.html">DapObject</a><ul class='methods'><li data-type='method'><a href="DapObject.html#toJSON">toJSON</a></li></ul></li><li><a href="DapObjectMongoDbRepository.html">DapObjectMongoDbRepository</a><ul class='methods'><li data-type='method'><a href="DapObjectMongoDbRepository.html#find">find</a></li><li data-type='method'><a href="DapObjectMongoDbRepository.html#store">store</a></li></ul></li><li><a href="SyncState.html">SyncState</a><ul class='methods'><li data-type='method'><a href="SyncState.html#setBlocks">setBlocks</a></li><li data-type='method'><a href="SyncState.html#getBlocks">getBlocks</a></li><li data-type='method'><a href="SyncState.html#setLastSyncAt">setLastSyncAt</a></li><li data-type='method'><a href="SyncState.html#getLastSyncAt">getLastSyncAt</a></li><li data-type='method'><a href="SyncState.html#getLastBlock">getLastBlock</a></li><li data-type='method'><a href="SyncState.html#isEqual">isEqual</a></li><li data-type='method'><a href="SyncState.html#toJSON">toJSON</a></li></ul></li><li><a href="SyncStateRepository.html">SyncStateRepository</a><ul class='methods'><li data-type='method'><a href="SyncStateRepository.html#store">store</a></li><li data-type='method'><a href="SyncStateRepository.html#fetch">fetch</a></li></ul></li><li><a href="SyncStateRepositoryChangeListener.html">SyncStateRepositoryChangeListener</a><ul class='methods'><li data-type='method'><a href="SyncStateRepositoryChangeListener.html#getRepository">getRepository</a></li><li data-type='method'><a href="SyncStateRepositoryChangeListener.html#listen">listen</a></li><li data-type='method'><a href="SyncStateRepositoryChangeListener.html#stop">stop</a></li></ul></li></ul><h3>Modules</h3><ul><li><a href="usernameIndex%250AThis%2520module%2520is%2520a%2520temporary%2520solution%2520until%2520proper%2520index%2520in%2520dashcore%2520is%2520provided.module_.html">usernameIndex
+This module is a temporary solution until proper index in dashcore is provided.</a></li><li><a href="module-MasternodeListProvider.html">MasternodeListProvider</a></li><li><a href="module-MNDiscoveryService.html">MNDiscoveryService</a></li><li><a href="Schema.module_validate.html">Schema.validate</a><ul class='methods'><li data-type='method'><a href="Schema.module_validate.html#~compileDapSchema">compileDapSchema</a></li><li data-type='method'><a href="Schema.module_validate.html#~validateSubTx">validateSubTx</a></li><li data-type='method'><a href="Schema.module_validate.html#~validateBlockchainUser">validateBlockchainUser</a></li><li data-type='method'><a href="Schema.module_validate.html#~validateSTHeader">validateSTHeader</a></li><li data-type='method'><a href="Schema.module_validate.html#~validateSTPacket">validateSTPacket</a></li><li data-type='method'><a href="Schema.module_validate.html#~validateSTPacketObjects">validateSTPacketObjects</a></li><li data-type='method'><a href="Schema.module_validate.html#~validateDapContract">validateDapContract</a></li><li data-type='method'><a href="Schema.module_validate.html#~validateDapObject">validateDapObject</a></li><li data-type='method'><a href="Schema.module_validate.html#~validateBlockhainUsername">validateBlockhainUsername</a></li></ul></li><li><a href="Schema.module_create.html">Schema.create</a><ul class='methods'><li data-type='method'><a href="Schema.module_create.html#~createSTHeaderInstance">createSTHeaderInstance</a></li><li data-type='method'><a href="Schema.module_create.html#~createSTPacketInstance">createSTPacketInstance</a></li><li data-type='method'><a href="Schema.module_create.html#~createDapContract">createDapContract</a></li><li data-type='method'><a href="Schema.module_create.html#~createDapObject">createDapObject</a></li><li data-type='method'><a href="Schema.module_create.html#~createBlockchainUser">createBlockchainUser</a></li></ul></li><li><a href="Schema.module_hash.html">Schema.hash</a><ul class='methods'><li data-type='method'><a href="Schema.module_hash.html#~hashSubTx">hashSubTx</a></li><li data-type='method'><a href="Schema.module_hash.html#~hashSTHeader">hashSTHeader</a></li><li data-type='method'><a href="Schema.module_hash.html#~hashSTPacket">hashSTPacket</a></li><li data-type='method'><a href="Schema.module_hash.html#~hashDapContract">hashDapContract</a></li><li data-type='method'><a href="Schema.module_hash.html#~hashDapSchema">hashDapSchema</a></li><li data-type='method'><a href="Schema.module_hash.html#~hashDapObject">hashDapObject</a></li></ul></li><li><a href="Schema.module_object.html">Schema.object</a><ul class='methods'><li data-type='method'><a href="Schema.module_object.html#~setID">setID</a></li><li data-type='method'><a href="Schema.module_object.html#~setMeta">setMeta</a></li><li data-type='method'><a href="Schema.module_object.html#~isSysObject">isSysObject</a></li><li data-type='method'><a href="Schema.module_object.html#~fromObject">fromObject</a></li><li data-type='method'><a href="Schema.module_object.html#~toHash">toHash</a></li><li data-type='method'><a href="Schema.module_object.html#~toJSON">toJSON</a></li></ul></li><li><a href="Schema.module_params.html">Schema.params</a></li><li><a href="Schema.util.module_error.html">Schema.util.error</a></li><li><a href="Schema.module_serialize.html">Schema.serialize</a><ul class='methods'><li data-type='method'><a href="Schema.module_serialize.html#~encode">encode</a></li><li data-type='method'><a href="Schema.module_serialize.html#~decode">decode</a></li></ul></li><li><a href="Schema.module_state.html">Schema.state</a><ul class='methods'><li data-type='method'><a href="Schema.module_state.html#~validateTransitionData">validateTransitionData</a></li><li data-type='method'><a href="Schema.module_state.html#~_validateIndexes">_validateIndexes</a></li><li data-type='method'><a href="Schema.module_state.html#~_validateRelations">_validateRelations</a></li><li data-type='method'><a href="Schema.module_state.html#~_getIsProfile">_getIsProfile</a></li><li data-type='method'><a href="Schema.module_state.html#~_validateDapSpace">_validateDapSpace</a></li></ul></li><li><a href="Schema.util.module_cbor.html">Schema.util.cbor</a><ul class='methods'><li data-type='method'><a href="Schema.util.module_cbor.html#~serialize">serialize</a></li><li data-type='method'><a href="Schema.util.module_cbor.html#~toJSON">toJSON</a></li></ul></li><li><a href="Schema.util.module_hash.html">Schema.util.hash</a><ul class='methods'><li data-type='method'><a href="Schema.util.module_hash.html#~toHash">toHash</a></li></ul></li><li><a href="Schema.util.module_object.html">Schema.util.object</a><ul class='methods'><li data-type='method'><a href="Schema.util.module_object.html#~objectToJSON">objectToJSON</a></li></ul></li></ul><h3>Interfaces</h3><ul><li><a href="VMNDAPIAdapter.html">VMNDAPIAdapter</a><ul class='methods'><li data-type='method'><a href="VMNDAPIAdapter.html#_onNewBlock">_onNewBlock</a></li><li data-type='method'><a href="VMNDAPIAdapter.html#CreateUser">CreateUser</a></li><li data-type='method'><a href="VMNDAPIAdapter.html#GetUserById">GetUserById</a></li><li data-type='method'><a href="VMNDAPIAdapter.html#SearchUsers">SearchUsers</a></li></ul></li><li><a href="Client.html">Client</a><ul class='methods'><li data-type='method'><a href="Client.html#addUpdateListener">addUpdateListener</a></li><li data-type='method'><a href="Client.html#removeUpdateListener">removeUpdateListener</a></li><li data-type='method'><a href="Client.html#getUser">getUser</a></li><li data-type='method'><a href="Client.html#getUserById">getUserById</a></li><li data-type='method'><a href="Client.html#searchUsers">searchUsers</a></li><li data-type='method'><a href="Client.html#_signup">_signup</a></li><li data-type='method'><a href="Client.html#commitSingleObject">commitSingleObject</a></li><li data-type='method'><a href="Client.html#requestPayment">requestPayment</a></li></ul></li><li><a href="DashCore.html">DashCore</a><ul class='methods'><li data-type='method'><a href="DashCore.html#sendrawsubtx">sendrawsubtx</a></li><li data-type='method'><a href="DashCore.html#sendrawtransition">sendrawtransition</a></li><li data-type='method'><a href="DashCore.html#getuserbyname">getuserbyname</a></li><li data-type='method'><a href="DashCore.html#getuserbyid">getuserbyid</a></li><li data-type='method'><a href="DashCore.html#searchusers">searchusers</a></li><li data-type='method'><a href="DashCore.html#getblock">getblock</a></li><li data-type='method'><a href="DashCore.html#gettransition">gettransition</a></li><li data-type='method'><a href="DashCore.html#listtssinceblock">listtssinceblock</a></li><li data-type='method'><a href="DashCore.html#zmqpubblocktsp">zmqpubblocktsp</a></li></ul></li><li><a href="DashDrive.html">DashDrive</a><ul class='methods'><li data-type='method'><a href="DashDrive.html#_onNewBlock">_onNewBlock</a></li><li data-type='method'><a href="DashDrive.html#pinPacket">pinPacket</a></li><li data-type='method'><a href="DashDrive.html#_commitPacket">_commitPacket</a></li><li data-type='method'><a href="DashDrive.html#getDapSpace">getDapSpace</a></li><li data-type='method'><a href="DashDrive.html#getDapContext">getDapContext</a></li><li data-type='method'><a href="DashDrive.html#getRelatedObjects">getRelatedObjects</a></li></ul></li></ul><h3>Global</h3><ul><li><a href="global.html#addToBloomFilterFactory">addToBloomFilterFactory</a></li><li><a href="global.html#clearBloomFilterFactory">clearBloomFilterFactory</a></li><li><a href="global.html#estimateFeeFactory">estimateFeeFactory</a></li><li><a href="global.html#generateFactory">generateFactory</a></li><li><a href="global.html#getAddressSummaryFactory">getAddressSummaryFactory</a></li><li><a href="global.html#getAddressTotalReceivedFactory">getAddressTotalReceivedFactory</a></li><li><a href="global.html#getAddressTotalSentFactory">getAddressTotalSentFactory</a></li><li><a href="global.html#getAddressUnconfirmedBalanceFactory">getAddressUnconfirmedBalanceFactory</a></li><li><a href="global.html#getBalanceFactory">getBalanceFactory</a></li><li><a href="global.html#getBestBlockHeightFactory">getBestBlockHeightFactory</a></li><li><a href="global.html#getBlockHashFactory">getBlockHashFactory</a></li><li><a href="global.html#getBlockHeadersFactory">getBlockHeadersFactory</a></li><li><a href="global.html#getBlocksFactory">getBlocksFactory</a></li><li><a href="global.html#getDapContractFactory">getDapContractFactory</a></li><li><a href="global.html#getHistoricBlockchainDataSyncStatusFactory">getHistoricBlockchainDataSyncStatusFactory</a></li><li><a href="global.html#getMNListFactory">getMNListFactory</a></li><li><a href="global.html#getPeerDataSyncStatusFactory">getPeerDataSyncStatusFactory</a></li><li><a href="global.html#getRawBlockFactory">getRawBlockFactory</a></li><li><a href="global.html#getSpvDataFactory">getSpvDataFactory</a></li><li><a href="global.html#getStatusFactory">getStatusFactory</a></li><li><a href="global.html#getTransactionByIdFactory">getTransactionByIdFactory</a></li><li><a href="global.html#getTransactionsByAddressFactory">getTransactionsByAddressFactory</a></li><li><a href="global.html#getUTXOFactory">getUTXOFactory</a></li><li><a href="global.html#getUserFactory">getUserFactory</a></li><li><a href="global.html#getUserDapContextFactory">getUserDapContextFactory</a></li><li><a href="global.html#getUserDapSpaceFactory">getUserDapSpaceFactory</a></li><li><a href="global.html#loadBloomFilterFactory">loadBloomFilterFactory</a></li><li><a href="global.html#searchDapContractsFactory">searchDapContractsFactory</a></li><li><a href="global.html#sendRawIxTransactionFactory">sendRawIxTransactionFactory</a></li><li><a href="global.html#sendRawTransactionFactory">sendRawTransactionFactory</a></li><li><a href="global.html#sendRawTransitionFactory">sendRawTransitionFactory</a></li><li><a href="global.html#start">start</a></li><li><a href="global.html#BitcoreLib">BitcoreLib</a></li><li><a href="global.html#request">request</a></li><li><a href="global.html#dropMongoDatabasesWithPrefixFactory">dropMongoDatabasesWithPrefixFactory</a></li><li><a href="global.html#attachStateViewHandlers">attachStateViewHandlers</a></li><li><a href="global.html#storeDapContractFactory">storeDapContractFactory</a></li><li><a href="global.html#createDapObjectMongoDbRepositoryFactory">createDapObjectMongoDbRepositoryFactory</a></li><li><a href="global.html#attachIpfsHandlers">attachIpfsHandlers</a></li><li><a href="global.html#unpinAllPacketsFactory">unpinAllPacketsFactory</a></li><li><a href="global.html#cleanDashDriveFactory">cleanDashDriveFactory</a></li><li><a href="global.html#getCheckSyncHttpMiddleware">getCheckSyncHttpMiddleware</a></li><li><a href="global.html#attachSyncHandlers">attachSyncHandlers</a></li><li><a href="global.html#getSchemaRelations">getSchemaRelations</a></li><li><a href="global.html#getSubSchemaRelations">getSubSchemaRelations</a></li><li><a href="global.html#_getAjvValidationResult">_getAjvValidationResult</a></li></ul>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">Schema.validate</h1>
+    
+
+    
+
+
+
+
+<section>
+
+<header>
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+
+<dl class="details">
+
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        
+        
+          dash-schema/lib/consensus/compile.js, line9
+        
+    </li></ul></dd>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+        
+            <div class="description"><p>Compiling Schema Definitions</p></div>
+        
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+     
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
+
+        
+            
+
+    
+
+    <h4 class="name" id="~compileDapSchema"><span class="type-signature">(inner) </span>compileDapSchema<span class="signature">(dapSchema)</span><span class="type-signature"> &rarr; {*}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        
+        
+          dash-schema/lib/consensus/compile.js, line32
+        
+    </li></ul></dd>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Validate a DapSchema definition</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>dapSchema</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>DapSchema</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">*</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="~validateSubTx"><span class="type-signature">(inner) </span>validateSubTx<span class="signature">(obj)</span><span class="type-signature"> &rarr; {ValidationResult}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        
+        
+          dash-schema/lib/consensus/validate.js, line69
+        
+    </li></ul></dd>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Validate a Subscription Transaction</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>obj</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Schema object instance</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">ValidationResult</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="~validateBlockchainUser"><span class="type-signature">(inner) </span>validateBlockchainUser<span class="signature">(obj)</span><span class="type-signature"> &rarr; {ValidationResult}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        
+        
+          dash-schema/lib/consensus/validate.js, line78
+        
+    </li></ul></dd>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Validate a Blockchain User</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>obj</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Schema object instance</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">ValidationResult</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="~validateSTHeader"><span class="type-signature">(inner) </span>validateSTHeader<span class="signature">(obj)</span><span class="type-signature"> &rarr; {ValidationResult}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        
+        
+          dash-schema/lib/consensus/validate.js, line87
+        
+    </li></ul></dd>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Validate a State Transition Header</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>obj</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Schema object instance</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">ValidationResult</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="~validateSTPacket"><span class="type-signature">(inner) </span>validateSTPacket<span class="signature">(obj, dapSchema)</span><span class="type-signature"> &rarr; {ValidationResult}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        
+        
+          dash-schema/lib/consensus/validate.js, line98
+        
+    </li></ul></dd>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Validate a State Transition Packet.  When the packets contain dapobjects,<br>the DapSchema parameter is required</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>obj</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Schema object instance</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>dapSchema</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>DapSchema (optional)</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">ValidationResult</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="~validateSTPacketObjects"><span class="type-signature">(inner) </span>validateSTPacketObjects<span class="signature">(obj, dapSchema)</span><span class="type-signature"> &rarr; {*}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        
+        
+          dash-schema/lib/consensus/validate.js, line138
+        
+    </li></ul></dd>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Validate the objects from a Transition packet<br>against a DapSchema and additional packet consensus rules</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>obj</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Schema object instance</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>dapSchema</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>DapSchema</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">*</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="~validateDapContract"><span class="type-signature">(inner) </span>validateDapContract<span class="signature">(obj, dapSchema)</span><span class="type-signature"> &rarr; {ValidationResult}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        
+        
+          dash-schema/lib/consensus/validate.js, line156
+        
+    </li></ul></dd>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Validate a DapContract instance</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>obj</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Schema object instance</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>dapSchema</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>DapSchema</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">ValidationResult</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="~validateDapObject"><span class="type-signature">(inner) </span>validateDapObject<span class="signature">(obj, dapSchema)</span><span class="type-signature"> &rarr; {*}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        
+        
+          dash-schema/lib/consensus/validate.js, line168
+        
+    </li></ul></dd>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Validate a DapObject instance</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>obj</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Schema object instance</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>dapSchema</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>DapSchema</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">*</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="~validateBlockhainUsername"><span class="type-signature">(inner) </span>validateBlockhainUsername<span class="signature">(uname)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        
+        
+          dash-schema/lib/consensus/validate.js, line193
+        
+    </li></ul></dd>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Validate a username using DIP 011 rules</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>uname</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Blockchain Username</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+
+
+
+<section>
+
+<header>
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+
+<dl class="details">
+
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        
+        
+          dash-schema/lib/consensus/result.js, line9
+        
+    </li></ul></dd>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+        
+            <div class="description"><p>Consensus code for Schema instance validation</p></div>
+        
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+     
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
+
+        
+            
+
+    
+
+    <h4 class="name" id="~compileDapSchema"><span class="type-signature">(inner) </span>compileDapSchema<span class="signature">(dapSchema)</span><span class="type-signature"> &rarr; {*}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        
+        
+          dash-schema/lib/consensus/compile.js, line32
+        
+    </li></ul></dd>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Validate a DapSchema definition</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>dapSchema</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>DapSchema</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">*</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="~validateSubTx"><span class="type-signature">(inner) </span>validateSubTx<span class="signature">(obj)</span><span class="type-signature"> &rarr; {ValidationResult}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        
+        
+          dash-schema/lib/consensus/validate.js, line69
+        
+    </li></ul></dd>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Validate a Subscription Transaction</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>obj</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Schema object instance</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">ValidationResult</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="~validateBlockchainUser"><span class="type-signature">(inner) </span>validateBlockchainUser<span class="signature">(obj)</span><span class="type-signature"> &rarr; {ValidationResult}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        
+        
+          dash-schema/lib/consensus/validate.js, line78
+        
+    </li></ul></dd>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Validate a Blockchain User</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>obj</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Schema object instance</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">ValidationResult</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="~validateSTHeader"><span class="type-signature">(inner) </span>validateSTHeader<span class="signature">(obj)</span><span class="type-signature"> &rarr; {ValidationResult}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        
+        
+          dash-schema/lib/consensus/validate.js, line87
+        
+    </li></ul></dd>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Validate a State Transition Header</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>obj</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Schema object instance</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">ValidationResult</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="~validateSTPacket"><span class="type-signature">(inner) </span>validateSTPacket<span class="signature">(obj, dapSchema)</span><span class="type-signature"> &rarr; {ValidationResult}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        
+        
+          dash-schema/lib/consensus/validate.js, line98
+        
+    </li></ul></dd>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Validate a State Transition Packet.  When the packets contain dapobjects,<br>the DapSchema parameter is required</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>obj</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Schema object instance</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>dapSchema</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>DapSchema (optional)</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">ValidationResult</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="~validateSTPacketObjects"><span class="type-signature">(inner) </span>validateSTPacketObjects<span class="signature">(obj, dapSchema)</span><span class="type-signature"> &rarr; {*}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        
+        
+          dash-schema/lib/consensus/validate.js, line138
+        
+    </li></ul></dd>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Validate the objects from a Transition packet<br>against a DapSchema and additional packet consensus rules</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>obj</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Schema object instance</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>dapSchema</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>DapSchema</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">*</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="~validateDapContract"><span class="type-signature">(inner) </span>validateDapContract<span class="signature">(obj, dapSchema)</span><span class="type-signature"> &rarr; {ValidationResult}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        
+        
+          dash-schema/lib/consensus/validate.js, line156
+        
+    </li></ul></dd>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Validate a DapContract instance</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>obj</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Schema object instance</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>dapSchema</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>DapSchema</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">ValidationResult</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="~validateDapObject"><span class="type-signature">(inner) </span>validateDapObject<span class="signature">(obj, dapSchema)</span><span class="type-signature"> &rarr; {*}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        
+        
+          dash-schema/lib/consensus/validate.js, line168
+        
+    </li></ul></dd>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Validate a DapObject instance</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>obj</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Schema object instance</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>dapSchema</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>DapSchema</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">*</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="~validateBlockhainUsername"><span class="type-signature">(inner) </span>validateBlockhainUsername<span class="signature">(uname)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        
+        
+          dash-schema/lib/consensus/validate.js, line193
+        
+    </li></ul></dd>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Validate a username using DIP 011 rules</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>uname</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Blockchain Username</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+
+
+
+<section>
+
+<header>
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+
+<dl class="details">
+
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        
+        
+          dash-schema/lib/consensus/validate.js, line9
+        
+    </li></ul></dd>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+        
+            <div class="description"><p>Consensus code for Schema instance validation</p></div>
+        
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+     
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
+
+        
+            
+
+    
+
+    <h4 class="name" id="~compileDapSchema"><span class="type-signature">(inner) </span>compileDapSchema<span class="signature">(dapSchema)</span><span class="type-signature"> &rarr; {*}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        
+        
+          dash-schema/lib/consensus/compile.js, line32
+        
+    </li></ul></dd>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Validate a DapSchema definition</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>dapSchema</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>DapSchema</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">*</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="~validateSubTx"><span class="type-signature">(inner) </span>validateSubTx<span class="signature">(obj)</span><span class="type-signature"> &rarr; {ValidationResult}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        
+        
+          dash-schema/lib/consensus/validate.js, line69
+        
+    </li></ul></dd>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Validate a Subscription Transaction</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>obj</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Schema object instance</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">ValidationResult</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="~validateBlockchainUser"><span class="type-signature">(inner) </span>validateBlockchainUser<span class="signature">(obj)</span><span class="type-signature"> &rarr; {ValidationResult}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        
+        
+          dash-schema/lib/consensus/validate.js, line78
+        
+    </li></ul></dd>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Validate a Blockchain User</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>obj</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Schema object instance</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">ValidationResult</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="~validateSTHeader"><span class="type-signature">(inner) </span>validateSTHeader<span class="signature">(obj)</span><span class="type-signature"> &rarr; {ValidationResult}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        
+        
+          dash-schema/lib/consensus/validate.js, line87
+        
+    </li></ul></dd>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Validate a State Transition Header</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>obj</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Schema object instance</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">ValidationResult</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="~validateSTPacket"><span class="type-signature">(inner) </span>validateSTPacket<span class="signature">(obj, dapSchema)</span><span class="type-signature"> &rarr; {ValidationResult}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        
+        
+          dash-schema/lib/consensus/validate.js, line98
+        
+    </li></ul></dd>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Validate a State Transition Packet.  When the packets contain dapobjects,<br>the DapSchema parameter is required</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>obj</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Schema object instance</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>dapSchema</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>DapSchema (optional)</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">ValidationResult</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="~validateSTPacketObjects"><span class="type-signature">(inner) </span>validateSTPacketObjects<span class="signature">(obj, dapSchema)</span><span class="type-signature"> &rarr; {*}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        
+        
+          dash-schema/lib/consensus/validate.js, line138
+        
+    </li></ul></dd>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Validate the objects from a Transition packet<br>against a DapSchema and additional packet consensus rules</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>obj</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Schema object instance</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>dapSchema</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>DapSchema</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">*</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="~validateDapContract"><span class="type-signature">(inner) </span>validateDapContract<span class="signature">(obj, dapSchema)</span><span class="type-signature"> &rarr; {ValidationResult}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        
+        
+          dash-schema/lib/consensus/validate.js, line156
+        
+    </li></ul></dd>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Validate a DapContract instance</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>obj</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Schema object instance</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>dapSchema</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>DapSchema</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">ValidationResult</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="~validateDapObject"><span class="type-signature">(inner) </span>validateDapObject<span class="signature">(obj, dapSchema)</span><span class="type-signature"> &rarr; {*}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        
+        
+          dash-schema/lib/consensus/validate.js, line168
+        
+    </li></ul></dd>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Validate a DapObject instance</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>obj</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Schema object instance</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>dapSchema</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>DapSchema</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">*</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="~validateBlockhainUsername"><span class="type-signature">(inner) </span>validateBlockhainUsername<span class="signature">(uname)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        
+        
+          dash-schema/lib/consensus/validate.js, line193
+        
+    </li></ul></dd>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Validate a username using DIP 011 rules</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>uname</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Blockchain Username</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Tue Jul 10 2018 17:44:46 GMT-0400 (EDT) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/linenumber.js"></script>
+</body>
+</html>
