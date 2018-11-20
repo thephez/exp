@@ -42,10 +42,9 @@
         "operationId": "getbestblockheight",
         "parameters": [
           {
-            "name": "version",
+            "name": "method",
             "in": "path",
             "description": "Version of the dataset.",
-            "required": "true",
             "schema": {
               "type": "string",
               "default": "v1"
