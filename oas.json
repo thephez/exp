@@ -101,10 +101,12 @@
                     "description": "Method name"
                   },
                   "id": {
+                    "default": "1",
                     "type": "string",
                     "description": "Request ID"
                   },
                   "jsonrpc": {
+                    "default": "2.0",
                     "type": "string",
                     "description": "Use version 2.0"
                   }
