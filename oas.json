@@ -39,7 +39,12 @@
         "summary": "getBestBlockHeight",
         "description": "Returns best block height",
         "operationId": "getbestblockheight",
-        "parameters": [],
+        "parameters": [
+          {
+            "id": "body",
+            "name": "body"
+          }
+        ],
         "responses": {
           "200": {
             "description": "Expected response to a valid request",
