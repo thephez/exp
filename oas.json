@@ -45,6 +45,7 @@
               }
             }
           }
+        },
         "requestBody": {
           "content": {
             "application/json": {
