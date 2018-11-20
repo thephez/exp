@@ -43,11 +43,11 @@
         "parameters": [
           {
             "name": "method",
-            "in": "path",
-            "description": "Version of the dataset.",
+            "in": "body",
+            "description": "Name of method.",
             "schema": {
               "type": "string",
-              "default": "v1"
+              "default": "getBestBlockHeight"
             }
           }
         ],
@@ -95,11 +95,6 @@
                   "jsonrpc"
                 ],
                 "properties": {
-                  "method": {
-                    "default": "getBestBlockHeight",
-                    "type": "string",
-                    "description": "Method name"
-                  },
                   "id": {
                     "default": "1",
                     "type": "string",
