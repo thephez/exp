@@ -24,6 +24,27 @@
         "description": "Returns best block height",
         "operationId": "getbestblockheight",
         "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Expected response to a valid request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Pets"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
         "requestBody": {
           "content": {
             "application/json": {
@@ -46,45 +67,6 @@
                   "jsonrpc": {
                     "type": "string",
                     "description": "Use version 2.0"
-                  }
-                }
-              }
-            }
-          }
-        },
-        "deprecated": false
-      }
-    },
-    "/getMNList": {
-      "post": {
-        "tags": [],
-        "summary": "getMNList",
-        "description": "Returns the masternode list",
-        "operationId": "getmnlist",
-        "parameters": [],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "required": [
-                  "method",
-                  "id",
-                  "jsonrpc"
-                ],
-                "properties": {
-                  "method": {
-                    "type": "string",
-                    "description": "Method name"
-                  },
-                  "id": {
-                    "type": "string",
-                    "description": "Request ID"
-                  },
-                  "jsonrpc": {
-                    "type": "number",
-                    "description": "Use version 2.0",
-                    "format": "float"
                   }
                 }
               }
