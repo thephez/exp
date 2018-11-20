@@ -1,4 +1,5 @@
 {
+  "x-send-defaults": true,
   "openapi": "3.0.0",
   "info": {
     "title": "devnet",
@@ -41,8 +42,14 @@
         "operationId": "getbestblockheight",
         "parameters": [
           {
-            "id": "body",
-            "name": "body"
+            "name": "version",
+            "in": "path",
+            "description": "Version of the dataset.",
+            "required": "true",
+            "schema": {
+              "type": "string",
+              "default": "v1"
+            }
           }
         ],
         "responses": {
@@ -115,7 +122,6 @@
   "x-explorer-enabled": true,
   "x-proxy-enabled": true,
   "x-samples-enabled": true,
-  "x-send-defaults": true,
   "x-samples-languages": [
     "curl",
     "node",
