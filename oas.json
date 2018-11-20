@@ -85,6 +85,7 @@
                 ],
                 "properties": {
                   "method": {
+                    "default": "getBestBlockHeight",
                     "type": "string",
                     "description": "Method name"
                   },
@@ -109,6 +110,7 @@
   "x-explorer-enabled": true,
   "x-proxy-enabled": true,
   "x-samples-enabled": true,
+  "x-send-defaults": true,
   "x-samples-languages": [
     "curl",
     "node",
