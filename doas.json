@@ -104,6 +104,53 @@
         "deprecated": false
       }
     },
+    "/getUser": {
+      "post": {
+        "tags": ["API"],
+        "summary": "getUser",
+        "description": "Returns Dash blockchain user info",
+        "operationId": "getuser",
+        "parameters": [],
+        "responses": {},
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "method",
+                  "id",
+                  "jsonrpc"
+                ],
+                "properties": {
+                  "method": {
+                    "default": "getUser",
+                    "type": "string",
+                    "description": "Method name"
+                  },
+                  "id": {
+                    "default": "1",
+                    "type": "number",
+                    "description": "Request ID"
+                  },
+                  "jsonrpc": {
+                    "default": "2.0",
+                    "type": "number",
+                    "description": "Use version 2.0",
+                    "format": "float"
+                  },
+                  "username": {
+                    "type": "string",
+                    "description": "Username to retrieve information for"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
     "/searchUsers": {
       "post": {
         "tags": ["API"],
@@ -147,7 +194,7 @@
                     "format": "int32"
                   },
                   "limit": {
-                    "type": "string",
+                    "type": "integer",
                     "description": "Limit of search results to return"
                   },
                   "pattern": {
