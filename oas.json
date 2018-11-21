@@ -40,18 +40,7 @@
         "summary": "getBestBlockHeight",
         "description": "Returns best block height",
         "operationId": "getbestblockheight",
-        "parameters": [
-          {
-            "name": "method",
-            "in": "body",
-            "description": "Name of method.",
-            "required": "true",
-            "schema": {
-              "type": "string",
-              "default": "getBestBlockHeight"
-            }
-          }
-        ],
+        "parameters": [],
         "responses": {
           "200": {
             "description": "Expected response to a valid request",
@@ -96,6 +85,11 @@
                   "jsonrpc"
                 ],
                 "properties": {
+                  "method": {
+                    "default": "getBestBlockHeight",
+                    "type": "string",
+                    "description": "Method name"
+                  },
                   "id": {
                     "default": "1",
                     "type": "string",
