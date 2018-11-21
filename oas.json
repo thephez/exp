@@ -45,6 +45,7 @@
             "name": "method",
             "in": "body",
             "description": "Name of method.",
+            "required": "true",
             "schema": {
               "type": "string",
               "default": "getBestBlockHeight"
