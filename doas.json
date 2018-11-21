@@ -38,16 +38,20 @@
                 ],
                 "properties": {
                   "method": {
+                    "default": "getBestBlockHeight",
                     "type": "string",
                     "description": "Method name"
                   },
                   "id": {
-                    "type": "string",
+                    "default": "1",
+                    "type": "number",
                     "description": "Request ID"
                   },
                   "jsonrpc": {
-                    "type": "string",
-                    "description": "Use version 2.0"
+                    "default": "2.0",
+                    "type": "number",
+                    "description": "Use version 2.0",
+                    "format": "float"
                   }
                 }
               }
@@ -77,14 +81,17 @@
                 ],
                 "properties": {
                   "method": {
+                    "default": "getMNList",
                     "type": "string",
                     "description": "Method name"
                   },
                   "id": {
-                    "type": "string",
+                    "default": "1",
+                    "type": "number",
                     "description": "Request ID"
                   },
                   "jsonrpc": {
+                    "default": "2.0",
                     "type": "number",
                     "description": "Use version 2.0",
                     "format": "float"
@@ -117,14 +124,17 @@
                 ],
                 "properties": {
                   "method": {
+                    "default": "searchUsers",
                     "type": "string",
                     "description": "Method name"
                   },
                   "id": {
-                    "type": "string",
+                    "default": "1",
+                    "type": "number",
                     "description": "Request ID"
                   },
                   "jsonrpc": {
+                    "default": "2.0",
                     "type": "number",
                     "description": "Use version 2.0",
                     "format": "float"
