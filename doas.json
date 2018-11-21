@@ -25,6 +25,7 @@
         "description": "Returns best block height",
         "operationId": "getbestblockheight",
         "parameters": [],
+        "responses": {},
         "requestBody": {
           "content": {
             "application/json": {
@@ -63,6 +64,7 @@
         "description": "Returns the masternode list",
         "operationId": "getmnlist",
         "parameters": [],
+        "responses": {},
         "requestBody": {
           "content": {
             "application/json": {
@@ -102,6 +104,7 @@
         "description": "Returns list of users after matching search criteria.",
         "operationId": "searchusers",
         "parameters": [],
+        "responses": {},
         "requestBody": {
           "content": {
             "application/json": {
