@@ -110,7 +110,7 @@
     },
     "/getsomethingelse": {
       "post": {
-        "tags": ["dapi"],
+        "tags": ["DAPI"],
         "summary": "getsomethingelse",
         "description": "Returns best block height",
         "operationId": "getsomethingelse",
