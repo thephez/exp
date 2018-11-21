@@ -36,7 +36,7 @@
   "paths": {
     "/getBestBlockHeight": {
       "post": {
-        "tags": ["test"],
+        "tags": ["DAPI"],
         "summary": "getBestBlockHeight",
         "description": "Returns best block height",
         "operationId": "getbestblockheight",
@@ -106,6 +106,80 @@
           }
         },
         "deprecated": false
+      }
+    },
+    "/getsomethingelse": {
+      "post": {
+        "tags": ["dapi"],
+        "summary": "getsomethingelse",
+        "description": "Returns best block height",
+        "operationId": "getsomethingelse",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Expected response to a valid request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "id": {
+                      "type": "integer",
+                      "format": "int64"
+                    },
+                    "jsonrpc": {
+                      "type": "string"
+                    },
+                    "result": {
+                      "type": "integer"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "method",
+                  "id",
+                  "jsonrpc"
+                ],
+                "properties": {
+                  "method": {
+                    "default": "getBestBlockHeight",
+                    "type": "string",
+                    "description": "Method name"
+                  },
+                  "id": {
+                    "default": "1",
+                    "type": "string",
+                    "description": "Request ID"
+                  },
+                  "jsonrpc": {
+                    "default": "2.0",
+                    "type": "string",
+                    "description": "Use version 2.0"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "deprecated": true
       }
     }
   },
