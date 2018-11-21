@@ -42,7 +42,7 @@
   "paths": {
     "/getBestBlockHeight": {
       "post": {
-        "tags": ["API", "x"],
+        "tags": [],
         "summary": "getBestBlockHeight",
         "description": "Returns best block height",
         "operationId": "getbestblockheight",
