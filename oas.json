@@ -33,10 +33,16 @@
   "security": [
     {}
   ],
+  "tags": [
+    {
+    "name": "API",
+    "description": "API"
+    }
+  ],
   "paths": {
     "/getBestBlockHeight": {
       "post": {
-        "tags": ["DAPI"],
+        "tags": [ ],
         "summary": "getBestBlockHeight",
         "description": "Returns best block height",
         "operationId": "getbestblockheight",
@@ -110,7 +116,7 @@
     },
     "/getsomethingelse": {
       "post": {
-        "tags": ["DAPI"],
+        "tags": [ ],
         "summary": "getsomethingelse",
         "description": "Returns best block height",
         "operationId": "getsomethingelse",
