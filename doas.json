@@ -1,31 +1,33 @@
 {
   "x-send-defaults": true,
   "openapi": "3.0.0",
+  "x-api-id": "dapi-devnet",
   "info": {
-    "title": "api-dev",
-    "version": "0.0.1"
+    "title": "DAPI devnet",
+    "version": "0.0.1",
+    "description": "The Dash decentralized API"
   },
   "servers": [
     {
-      "url": "http://54.191.116.37:3000"
+      "url": "http://52.39.47.232:3000"
     }
   ],
-  "components": {
-    "securitySchemes": {},
-    "schemas": {}
-  },
-  "security": [
-    {}
-  ],
   "paths": {
-    "/getBestBlockHeight": {
+    "/estimateFee": {
       "post": {
-        "tags": ["API"],
-        "summary": "getBestBlockHeight",
-        "description": "Returns best block height",
-        "operationId": "getbestblockheight",
+        "operationId": "estimateFee",
+        "deprecated": false,
+        "summary": "estimateFee",
+        "description": "Estimates transaction fee based on the size of number of blocks.",
+        "tags": [
+          "L1"
+        ],
         "parameters": [],
-        "responses": {},
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -38,37 +40,92 @@
                 ],
                 "properties": {
                   "method": {
-                    "default": "getBestBlockHeight",
                     "type": "string",
+                    "default": "estimateFee",
                     "description": "Method name"
                   },
                   "id": {
+                    "type": "integer",
                     "default": "1",
-                    "type": "number",
+                    "format": "int32",
                     "description": "Request ID"
                   },
                   "jsonrpc": {
+                    "type": "string",
                     "default": "2.0",
-                    "type": "number",
-                    "description": "Use version 2.0",
-                    "format": "float"
+                    "description": "JSON-RPC Version (use 2.0)"
                   }
                 }
               }
             }
           }
+        }
+      }
+    },
+    "/getbestblockheight": {
+      "post": {
+        "operationId": "getbestblockheight",
+        "deprecated": false,
+        "summary": "getBestBlockHeight",
+        "description": "Returns best block height",
+        "tags": [
+          "L1"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
         },
-        "deprecated": false
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "method",
+                  "id",
+                  "jsonrpc"
+                ],
+                "properties": {
+                  "method": {
+                    "type": "string",
+                    "default": "getBestBlockHeight",
+                    "description": "Method name"
+                  },
+                  "id": {
+                    "type": "integer",
+                    "default": "1",
+                    "format": "int32",
+                    "description": "Request ID"
+                  },
+                  "jsonrpc": {
+                    "type": "string",
+                    "default": "2.0",
+                    "description": "JSON-RPC Version (use 2.0)"
+                  }
+                }
+              }
+            }
+          }
+        }
       }
     },
     "/getMNList": {
       "post": {
-        "tags": ["API"],
+        "operationId": "getMNList",
+        "deprecated": false,
         "summary": "getMNList",
-        "description": "Returns the masternode list",
-        "operationId": "getmnlist",
+        "description": "Returns masternode list.",
+        "tags": [
+          "L1"
+        ],
         "parameters": [],
-        "responses": {},
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -81,37 +138,43 @@
                 ],
                 "properties": {
                   "method": {
-                    "default": "getMNList",
                     "type": "string",
+                    "default": "getMNList",
                     "description": "Method name"
                   },
                   "id": {
+                    "type": "integer",
                     "default": "1",
-                    "type": "number",
+                    "format": "int32",
                     "description": "Request ID"
                   },
                   "jsonrpc": {
+                    "type": "string",
                     "default": "2.0",
-                    "type": "number",
-                    "description": "Use version 2.0",
-                    "format": "float"
+                    "description": "JSON-RPC Version (use 2.0)"
                   }
                 }
               }
             }
           }
-        },
-        "deprecated": false
+        }
       }
     },
     "/getUser": {
       "post": {
-        "tags": ["API"],
+        "operationId": "getUser",
+        "deprecated": false,
         "summary": "getUser",
-        "description": "Returns Dash blockchain user info",
-        "operationId": "getuser",
+        "description": "Returns blockchain user.",
+        "tags": [
+          "L1"
+        ],
         "parameters": [],
-        "responses": {},
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -120,45 +183,53 @@
                 "required": [
                   "method",
                   "id",
-                  "jsonrpc"
+                  "jsonrpc",
+                  "username"
                 ],
                 "properties": {
                   "method": {
-                    "default": "getUser",
                     "type": "string",
+                    "default": "getUser",
                     "description": "Method name"
                   },
                   "id": {
+                    "type": "integer",
                     "default": "1",
-                    "type": "number",
+                    "format": "int32",
                     "description": "Request ID"
                   },
                   "jsonrpc": {
+                    "type": "string",
                     "default": "2.0",
-                    "type": "number",
-                    "description": "Use version 2.0",
-                    "format": "float"
+                    "description": "JSON-RPC Version (use 2.0)"
                   },
                   "username": {
                     "type": "string",
-                    "description": "Username to retrieve information for"
+                    "default": "alice",
+                    "description": "Username to retreive information for"
                   }
                 }
               }
             }
           }
-        },
-        "deprecated": false
+        }
       }
     },
     "/searchUsers": {
       "post": {
-        "tags": ["API"],
+        "operationId": "searchUsers",
+        "deprecated": false,
         "summary": "searchUsers",
-        "description": "Returns list of users after matching search criteria.",
-        "operationId": "searchusers",
+        "description": "Returns blockchain user.",
+        "tags": [
+          "L1"
+        ],
         "parameters": [],
-        "responses": {},
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        },
         "requestBody": {
           "content": {
             "application/json": {
@@ -169,33 +240,37 @@
                   "id",
                   "jsonrpc",
                   "offset",
-                  "limit"
+                  "limit",
+                  "pattern"
                 ],
                 "properties": {
                   "method": {
-                    "default": "searchUsers",
                     "type": "string",
+                    "default": "searchUsers",
                     "description": "Method name"
                   },
                   "id": {
+                    "type": "integer",
                     "default": "1",
-                    "type": "number",
+                    "format": "int32",
                     "description": "Request ID"
                   },
                   "jsonrpc": {
+                    "type": "string",
                     "default": "2.0",
-                    "type": "number",
-                    "description": "Use version 2.0",
-                    "format": "float"
+                    "description": "JSON-RPC Version (use 2.0)"
                   },
                   "offset": {
                     "type": "integer",
-                    "description": "Starting amount of results to return",
-                    "format": "int32"
+                    "default": "0",
+                    "format": "int32",
+                    "description": "Starting location in result set"
                   },
                   "limit": {
                     "type": "integer",
-                    "description": "Limit of search results to return"
+                    "default": "5",
+                    "format": "int32",
+                    "description": "Maximum number of results to return"
                   },
                   "pattern": {
                     "type": "string",
@@ -205,8 +280,7 @@
               }
             }
           }
-        },
-        "deprecated": false
+        }
       }
     }
   },
@@ -220,5 +294,7 @@
     "ruby",
     "javascript",
     "python"
-  ]
+  ],
+  "components": {},
+  "tags": [],
 }
