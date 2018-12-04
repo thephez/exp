@@ -12,65 +12,6 @@
       "url": "http://devnet-maithai.thephez.com:3000"
     }
   ],
-  "components": {
-    "schemas": {
-      "JsonRpcRequired": {
-        "type": "object",
-        "required": [
-          "id",
-          "jsonrpc"
-        ],
-        "properties": {
-          "id": {
-            "type": "integer",
-            "default": 1,
-            "format": "int32",
-            "description": "Request ID"
-          },
-          "jsonrpc": {
-            "type": "string",
-            "default": "2.0",
-            "description": "JSON-RPC Version (2.0)"
-          }
-        }
-      },
-      "estimateFee": {
-        "allOf": [
-          {
-            "$ref": "#/components/schemas/JsonRpcRequired"
-          },
-          {
-            "type": "object",
-            "required": [
-              "method",
-              "nbBlocks"
-            ],
-            "properties": {
-              "method": {
-                "type": "string",
-                "default": "estimateFee",
-                "description": "Method name"
-              },
-              "params": {
-                "title": "Parameters",
-                "type": "object",
-                "required": [
-                  "nbBlocks"
-                ],
-                "properties": {
-                  "nbBlocks": {
-                    "type": "integer",
-                    "default": 1,
-                    "description": "Number of blocks"
-                  }
-                }
-              }
-            }
-          }
-        ]
-      }
-    }
-  },
   "paths": {
     "/estimateFee": {
       "post": {
@@ -91,11 +32,45 @@
           "content": {
             "application/json": {
               "schema": {
-                "allOf": [
-                  {
-                    "$ref": "#/components/schemas/estimateFee"
+                "type": "object",
+                "required": [
+                  "method",
+                  "id",
+                  "jsonrpc",
+                  "params"
+                ],
+                "properties": {
+                  "method": {
+                    "type": "string",
+                    "default": "estimateFee",
+                    "description": "Method name"
+                  },
+                  "id": {
+                    "type": "integer",
+                    "default": "1",
+                    "format": "int32",
+                    "description": "Request ID"
+                  },
+                  "jsonrpc": {
+                    "type": "string",
+                    "default": "2.0",
+                    "description": "JSON-RPC Version (use 2.0)"
+                  },
+                  "params": {
+                    "title": "Parameters",
+                    "type": "object",
+                    "required": [
+                      "nbBlocks"
+                    ],
+                    "properties": {
+                      "nbBlocks": {
+                        "type": "integer",
+                        "default": 1,
+                        "description": "Number of blocks"
+                      }
+                    }
                   }
-                ]
+                }
               }
             }
           }
@@ -405,5 +380,32 @@
     "javascript",
     "python"
   ],
+  "components": {
+    "schemas": {
+      "JsonRpcRequired": {
+        "type": "object",
+        "required": [
+          "id",
+          "jsonrpc"
+        ],
+        "properties": {
+          "id": {
+            "type": "integer",
+            "default": 1,
+            "format": "int32",
+            "description": "Request ID"
+          },
+          "jsonrpc": {
+            "type": "string",
+            "default": "2.0",
+            "description": "JSON-RPC Version (2.0)"
+          }
+        },
+        "discriminator": {
+          "propertyName": "method_name"
+        }
+      }
+    }
+  },
   "tags": [],
 }
