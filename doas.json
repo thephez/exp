@@ -283,7 +283,7 @@
         }
       }
     },
-    "/users": {
+    "/fee": {
       "post": {
         "operationId": "users",
         "deprecated": false,
@@ -298,7 +298,7 @@
         },
         "requestBody": {
           "content": {
-            " application/x-www-form-urlencoded": {
+            " application/json": {
               "schema": {
                 "type": "object",
                 "properties": {
@@ -319,7 +319,7 @@
                     "description": "JSON-RPC Version (use 2.0)"
                   },
                   "params": {
-                    "title": "Number of blocks",
+                    "title": "Parameters",
                     "type": "object",
                     "required": [
                       "nbBlocks"
