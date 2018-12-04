@@ -304,10 +304,12 @@
                   ],
                 "properties": {
                   "username": {
-                    "type": "string"
+                    "type": "string",
+                    "default": "user"
                   },
                   "firstName": {
-                    "type": "string"
+                    "type": "string",
+                    "default": ""
                   }
                 }
               }
