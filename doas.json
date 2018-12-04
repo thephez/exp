@@ -329,6 +329,5 @@
     "python"
   ],
   "components": {},
-  "tags": [],
-  "x-si-base": "swagger.json"
+  "tags": []
 }
