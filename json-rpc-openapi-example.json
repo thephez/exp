@@ -76,6 +76,32 @@
           }
         }
       }
+    },
+    "/examplePost2": {
+      "post": {
+        "operationId": "examplePost2",
+        "deprecated": false,
+        "summary": "Example of JSON-RPC2 Post",
+        "description": "Example post using JSON-RPC params.",
+        "tags": [
+          "JSONRPC"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/examplePost"
+              }
+            }
+          }
+        }
+      }
     }
   },
   "x-headers": [],
@@ -89,6 +115,64 @@
     "javascript",
     "python"
   ],
-  "components": {},
+  "components": {
+    "schemas": {
+      "JsonRpcRequired": {
+        "type": "object",
+        "required": [
+          "method",
+          "id",
+          "jsonrpc"
+        ],
+        "properties": {
+          "method": {
+            "type": "string",
+            "default": "examplePost",
+            "description": "Method name"
+          },
+          "id": {
+            "type": "integer",
+            "default": 1,
+            "format": "int32",
+            "description": "Request ID"
+          },
+          "jsonrpc": {
+            "type": "string",
+            "default": "2.0",
+            "description": "JSON-RPC Version (2.0)"
+          }
+        },
+        "discriminator": {
+          "propertyName": "method_name"
+        }
+      },
+      "examplePost": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/JsonRpcRequired"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "params": {
+                "title": "Parameters",
+                "type": "object",
+                "required": [
+                  "jsonParam"
+                ],
+                "properties": {
+                  "jsonParam": {
+                    "type": "integer",
+                    "default": 1,
+                    "description": "A param to include"
+                  }
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
   "tags": []
 }
