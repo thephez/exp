@@ -54,6 +54,20 @@
                     "type": "string",
                     "default": "2.0",
                     "description": "JSON-RPC Version (use 2.0)"
+                  },
+                  "params": {
+                    "title": "Parameters",
+                    "type": "object",
+                    "required": [
+                      "nbBlocks"
+                    ],
+                    "properties": {
+                      "nbBlocks": {
+                        "type": "integer",
+                        "default": 1,
+                        "description": "Number of blocks"
+                      }
+                    }
                   }
                 }
               }
