@@ -296,6 +296,7 @@
             {
               "in": "body",
               "name": "user",
+              "description": "The user to create",
               "schema": {
                 "type": "object",
                 "required": [
@@ -304,14 +305,17 @@
                 "properties": {
                   "username": {
                     "type": "string"
+                  },
+                  "firstName": {
+                    "type": "string"
                   }
                 }
               }
             }
           ],
           "responses": {
-            "200": {
-              "description": "Successful response"
+            "201": {
+              "description": "Created"
             }
           }
         }
