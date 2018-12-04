@@ -301,6 +301,11 @@
             " application/json": {
               "schema": {
                 "type": "object",
+                "required": [
+                  "method",
+                  "id",
+                  "jsonrpc"
+                ],
                 "properties": {
                   "method": {
                     "type": "string",
