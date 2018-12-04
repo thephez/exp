@@ -287,7 +287,7 @@
       "post": {
         "operationId": "users",
         "deprecated": false,
-        "summary": "users",
+        "summary": "estimateFee",
         "description": "Creates a new user.",
         "tags": [],
         "parameters": [],
@@ -313,7 +313,7 @@
                     "properties": {
                       "method": {
                         "type": "string",
-                        "default": "getBestBlockHeight",
+                        "default": "estimateFee",
                         "description": "Method name"
                       },
                       "id": {
@@ -326,6 +326,22 @@
                         "type": "string",
                         "default": "2.0",
                         "description": "JSON-RPC Version (use 2.0)"
+                      }
+                    }
+                  },
+                  "params": {
+                    "title": "Message",
+                    "type": "object",
+                    "required": [
+                      "method",
+                      "id",
+                      "jsonrpc"
+                    ],
+                    "properties": {
+                      "nbBlocks": {
+                        "type": "integer",
+                        "default": "1",
+                        "description": "Number of blocks"
                       }
                     }
                   }
