@@ -302,20 +302,19 @@
               "schema": {
                 "type": "object",
                 "properties": {
+                  "method": {
+                    "type": "string",
+                    "default": "estimateFee",
+                    "description": "Method name"
+                  },
                   "payload": {
                     "title": "Message",
                     "type": "object",
                     "required": [
-                      "method",
                       "id",
                       "jsonrpc"
                     ],
                     "properties": {
-                      "method": {
-                        "type": "string",
-                        "default": "estimateFee",
-                        "description": "Method name"
-                      },
                       "id": {
                         "type": "integer",
                         "default": "1",
