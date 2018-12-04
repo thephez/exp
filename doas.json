@@ -34,7 +34,7 @@
               "schema": {
                 "allOf": [
                   {
-                    "$ref": "#/components/schemas/estimateFee"
+                    "$ref": "#/definitions/components/schemas/estimateFee"
                   }
                 ]
               }
@@ -374,7 +374,7 @@
       "estimateFee": {
         "allOf": [
           {
-            "$ref": "#/components/schemas/JsonRpcRequired"
+            "$ref": "#/definitions/components/schemas/JsonRpcRequired"
           },
           {
           "type": "object",
