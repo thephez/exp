@@ -32,45 +32,39 @@
           "content": {
             "application/json": {
               "schema": {
-                "type": "object",
-                "required": [
-                  "method",
-                  "id",
-                  "jsonrpc",
-                  "params"
-                ],
-                "properties": {
-                  "method": {
-                    "type": "string",
-                    "default": "estimateFee",
-                    "description": "Method name"
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/JsonRpcRequired"
                   },
-                  "id": {
-                    "type": "integer",
-                    "default": "1",
-                    "format": "int32",
-                    "description": "Request ID"
-                  },
-                  "jsonrpc": {
-                    "type": "string",
-                    "default": "2.0",
-                    "description": "JSON-RPC Version (use 2.0)"
-                  },
-                  "params": {
-                    "title": "Parameters",
+                  {
                     "type": "object",
                     "required": [
+                      "method",
                       "nbBlocks"
                     ],
                     "properties": {
-                      "nbBlocks": {
-                        "type": "integer",
-                        "default": 1,
-                        "description": "Number of blocks"
+                      "method": {
+                        "type": "string",
+                        "default": "estimateFee",
+                        "description": "Method name"
+                      },
+                      "params": {
+                        "title": "Parameters",
+                        "type": "object",
+                        "required": [
+                          "nbBlocks"
+                        ],
+                        "properties": {
+                          "nbBlocks": {
+                            "type": "integer",
+                            "default": 1,
+                            "description": "Number of blocks"
+                          }
+                        }
                       }
                     }
                   }
-                }
+                ]
               }
             }
           }
