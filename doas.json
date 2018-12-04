@@ -9,7 +9,7 @@
   },
   "servers": [
     {
-      "url": "http://52.39.47.232:3000"
+      "url": "http://devnet-maithai.thephez.com:3000"
     }
   ],
   "paths": {
