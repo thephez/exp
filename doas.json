@@ -34,35 +34,7 @@
               "schema": {
                 "allOf": [
                   {
-                    "$ref": "#/components/schemas/JsonRpcRequired"
-                  },
-                  {
-                    "type": "object",
-                    "required": [
-                      "method",
-                      "nbBlocks"
-                    ],
-                    "properties": {
-                      "method": {
-                        "type": "string",
-                        "default": "estimateFee",
-                        "description": "Method name"
-                      },
-                      "params": {
-                        "title": "Parameters",
-                        "type": "object",
-                        "required": [
-                          "nbBlocks"
-                        ],
-                        "properties": {
-                          "nbBlocks": {
-                            "type": "integer",
-                            "default": 1,
-                            "description": "Number of blocks"
-                          }
-                        }
-                      }
-                    }
+                    "$ref": "#/components/schemas/estimateFee"
                   }
                 ]
               }
@@ -398,6 +370,41 @@
         "discriminator": {
           "propertyName": "method_name"
         }
+      },
+      "estimateFee": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/JsonRpcRequired"
+          },
+          {
+          "type": "object",
+          "required": [
+            "method",
+            "nbBlocks"
+          ],
+          "properties": {
+            "method": {
+              "type": "string",
+              "default": "estimateFee",
+              "description": "Method name"
+            },
+            "params": {
+              "title": "Parameters",
+              "type": "object",
+              "required": [
+                "nbBlocks"
+              ],
+              "properties": {
+                "nbBlocks": {
+                  "type": "integer",
+                  "default": 1,
+                  "description": "Number of blocks"
+                  }
+                }
+              }
+            }
+          }
+        ]
       }
     }
   },
