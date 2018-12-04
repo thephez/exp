@@ -36,7 +36,8 @@
                 "required": [
                   "method",
                   "id",
-                  "jsonrpc"
+                  "jsonrpc",
+                  "params"
                 ],
                 "properties": {
                   "method": {
@@ -217,10 +218,19 @@
                     "default": "2.0",
                     "description": "JSON-RPC Version (use 2.0)"
                   },
-                  "username": {
-                    "type": "string",
-                    "default": "alice",
-                    "description": "Username to retreive information for"
+                  "params": {
+                    "title": "Parameters",
+                    "type": "object",
+                    "required": [
+                      "username"
+                    ],
+                    "properties": {
+                      "username": {
+                        "type": "string",
+                        "default": "alice",
+                        "description": "Username to retreive information for"
+                      }
+                    }
                   }
                 }
               }
