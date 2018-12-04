@@ -282,8 +282,41 @@
           }
         }
       }
-    }
-  },
+    },
+    "/users": {
+        "post": {
+          "operationId": "users",
+          "deprecated": false,
+          "summary": "users",
+          "description": "Returns blockchain user.",
+          "tags": [
+            "L1"
+          ],
+          "parameters": [
+            {
+              "in": "body",
+              "name": "user",
+              "schema": {
+                "type": "object",
+                "required": [
+                  "username"
+                  ],
+                "properties": {
+                  "username": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Successful response"
+            }
+          }
+        }
+      }
+    },
   "x-headers": [],
   "x-explorer-enabled": true,
   "x-proxy-enabled": true,
@@ -297,4 +330,5 @@
   ],
   "components": {},
   "tags": [],
+  "x-si-base": "swagger.json"
 }
