@@ -29,14 +29,6 @@
         "requestBody": {
           "content": {
             "application/json": {
-              "examples": {
-                "foo": {
-                  "summary": "test",
-                  "value": {
-                    "method": "abc"
-                  }
-                }
-              },
               "schema": {
                 "type": "object",
                 "required": [
