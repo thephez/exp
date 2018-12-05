@@ -1,10 +1,9 @@
 {
-  "x-send-defaults": true,
   "openapi": "3.0.0",
   "x-api-id": "dapi-devnet",
   "info": {
     "title": "DAPI devnet",
-    "version": "0.0.1",
+    "version": "0.1.0",
     "description": "The Dash decentralized API"
   },
   "servers": [
@@ -13,6 +12,75 @@
     }
   ],
   "paths": {
+    "/addToBloomFilter": {
+      "post": {
+        "operationId": "addToBloomFilter",
+        "deprecated": false,
+        "summary": "addToBloomFilter",
+        "description": "Adds an element to an existing bloom filter",
+        "tags": [
+          "L1"
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "method",
+                  "id",
+                  "jsonrpc",
+                  "params"
+                ],
+                "properties": {
+                  "method": {
+                    "type": "string",
+                    "default": "addToBloomFilter",
+                    "description": "Method name"
+                  },
+                  "id": {
+                    "type": "integer",
+                    "default": 1,
+                    "format": "int32",
+                    "description": "Request ID"
+                  },
+                  "jsonrpc": {
+                    "type": "string",
+                    "default": "2.0",
+                    "description": "JSON-RPC Version (2.0)"
+                  },
+                  "params": {
+                    "title": "Parameters",
+                    "type": "object",
+                    "required": [
+                      "originalFilter",
+                      "element"
+                    ],
+                    "properties": {
+                      "originalFilter": {
+                        "type": "string",
+                        "default": "",
+                        "description": "Original filter"
+                      },
+                      "element": {
+                        "type": "string",
+                        "default": "",
+                        "description": "Element to add to filter"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/estimateFee": {
       "post": {
         "operationId": "estimateFee",
@@ -22,7 +90,6 @@
         "tags": [
           "L1"
         ],
-        "parameters": [],
         "responses": {
           "200": {
             "description": "Successful response"
@@ -47,14 +114,14 @@
                   },
                   "id": {
                     "type": "integer",
-                    "default": "1",
+                    "default": 1,
                     "format": "int32",
                     "description": "Request ID"
                   },
                   "jsonrpc": {
                     "type": "string",
                     "default": "2.0",
-                    "description": "JSON-RPC Version (use 2.0)"
+                    "description": "JSON-RPC Version (2.0)"
                   },
                   "params": {
                     "title": "Parameters",
@@ -66,7 +133,7 @@
                       "nbBlocks": {
                         "type": "integer",
                         "default": 1,
-                        "description": "Number of blocks"
+                        "description": "Number of blocks for fee estimate"
                       }
                     }
                   }
@@ -77,7 +144,7 @@
         }
       }
     },
-    "/getbestblockheight": {
+    "/getBestBlockHeight": {
       "post": {
         "operationId": "getbestblockheight",
         "deprecated": false,
@@ -86,7 +153,6 @@
         "tags": [
           "L1"
         ],
-        "parameters": [],
         "responses": {
           "200": {
             "description": "Successful response"
@@ -110,14 +176,14 @@
                   },
                   "id": {
                     "type": "integer",
-                    "default": "1",
+                    "default": 1,
                     "format": "int32",
                     "description": "Request ID"
                   },
                   "jsonrpc": {
                     "type": "string",
                     "default": "2.0",
-                    "description": "JSON-RPC Version (use 2.0)"
+                    "description": "JSON-RPC Version (2.0)"
                   }
                 }
               }
@@ -131,11 +197,10 @@
         "operationId": "getMNList",
         "deprecated": false,
         "summary": "getMNList",
-        "description": "Returns masternode list.",
+        "description": "Returns masternode list",
         "tags": [
           "L1"
         ],
-        "parameters": [],
         "responses": {
           "200": {
             "description": "Successful response"
@@ -159,14 +224,14 @@
                   },
                   "id": {
                     "type": "integer",
-                    "default": "1",
+                    "default": 1,
                     "format": "int32",
                     "description": "Request ID"
                   },
                   "jsonrpc": {
                     "type": "string",
                     "default": "2.0",
-                    "description": "JSON-RPC Version (use 2.0)"
+                    "description": "JSON-RPC Version (2.0)"
                   }
                 }
               }
@@ -180,11 +245,10 @@
         "operationId": "getUser",
         "deprecated": false,
         "summary": "getUser",
-        "description": "Returns blockchain user.",
+        "description": "Returns  a blockchain user",
         "tags": [
-          "L1"
+          "L2"
         ],
-        "parameters": [],
         "responses": {
           "200": {
             "description": "Successful response"
@@ -199,7 +263,7 @@
                   "method",
                   "id",
                   "jsonrpc",
-                  "username"
+                  "params"
                 ],
                 "properties": {
                   "method": {
@@ -209,14 +273,14 @@
                   },
                   "id": {
                     "type": "integer",
-                    "default": "1",
+                    "default": 1,
                     "format": "int32",
                     "description": "Request ID"
                   },
                   "jsonrpc": {
                     "type": "string",
                     "default": "2.0",
-                    "description": "JSON-RPC Version (use 2.0)"
+                    "description": "JSON-RPC Version (2.0)"
                   },
                   "params": {
                     "title": "Parameters",
@@ -227,8 +291,8 @@
                     "properties": {
                       "username": {
                         "type": "string",
-                        "default": "alice",
-                        "description": "Username to retreive information for"
+                        "default": "",
+                        "description": "Either a username or a user's registration tx id"
                       }
                     }
                   }
@@ -244,11 +308,10 @@
         "operationId": "searchUsers",
         "deprecated": false,
         "summary": "searchUsers",
-        "description": "Returns blockchain user.",
+        "description": "Adds an element to an existing bloom filter",
         "tags": [
-          "L1"
+          "L2"
         ],
-        "parameters": [],
         "responses": {
           "200": {
             "description": "Successful response"
@@ -263,9 +326,7 @@
                   "method",
                   "id",
                   "jsonrpc",
-                  "offset",
-                  "limit",
-                  "pattern"
+                  "params"
                 ],
                 "properties": {
                   "method": {
@@ -275,89 +336,38 @@
                   },
                   "id": {
                     "type": "integer",
-                    "default": "1",
+                    "default": 1,
                     "format": "int32",
                     "description": "Request ID"
                   },
                   "jsonrpc": {
                     "type": "string",
                     "default": "2.0",
-                    "description": "JSON-RPC Version (use 2.0)"
-                  },
-                  "offset": {
-                    "type": "integer",
-                    "default": "0",
-                    "format": "int32",
-                    "description": "Starting location in result set"
-                  },
-                  "limit": {
-                    "type": "integer",
-                    "default": "5",
-                    "format": "int32",
-                    "description": "Maximum number of results to return"
-                  },
-                  "pattern": {
-                    "type": "string",
-                    "description": "Search pattern"
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/fee": {
-      "post": {
-        "operationId": "users",
-        "deprecated": false,
-        "summary": "estimateFee",
-        "description": "Creates a new user.",
-        "tags": [],
-        "parameters": [],
-        "responses": {
-          "201": {
-            "description": "Successfully created"
-          }
-        },
-        "requestBody": {
-          "content": {
-            " application/json": {
-              "schema": {
-                "type": "object",
-                "required": [
-                  "method",
-                  "id",
-                  "jsonrpc"
-                ],
-                "properties": {
-                  "method": {
-                    "type": "string",
-                    "default": "estimateFee",
-                    "description": "Method name"
-                  },
-                  "id": {
-                    "type": "integer",
-                    "default": "1",
-                    "format": "int32",
-                    "description": "Request ID"
-                  },
-                  "jsonrpc": {
-                    "type": "string",
-                    "default": "2.0",
-                    "description": "JSON-RPC Version (use 2.0)"
+                    "description": "JSON-RPC Version (2.0)"
                   },
                   "params": {
                     "title": "Parameters",
                     "type": "object",
                     "required": [
-                      "nbBlocks"
+                      "pattern",
+                      "limit",
+                      "offset"
                     ],
                     "properties": {
-                      "nbBlocks": {
+                      "pattern": {
+                        "type": "string",
+                        "default": "User001",
+                        "description": "Search pattern"
+                      },
+                      "limit": {
                         "type": "integer",
-                        "default": 1,
-                        "description": "Number of blocks"
+                        "default": 10,
+                        "description": "Maximum number of results to return"
+                      },
+                      "offset": {
+                        "type": "integer",
+                        "default": 0,
+                        "description": "Starting location in result set"
                       }
                     }
                   }
@@ -369,17 +379,6 @@
       }
     }
   },
-  "x-headers": [],
-  "x-explorer-enabled": true,
-  "x-proxy-enabled": true,
-  "x-samples-enabled": true,
-  "x-samples-languages": [
-    "curl",
-    "node",
-    "ruby",
-    "javascript",
-    "python"
-  ],
   "components": {
     "schemas": {
       "JsonRpcRequired": {
@@ -407,5 +406,17 @@
       }
     }
   },
-  "tags": [],
+  "x-send-defaults": true,
+  "x-headers": [],
+  "x-explorer-enabled": true,
+  "x-proxy-enabled": true,
+  "x-samples-enabled": true,
+  "x-samples-languages": [
+    "curl",
+    "node",
+    "ruby",
+    "javascript",
+    "python"
+  ],
+  "tags": []
 }
