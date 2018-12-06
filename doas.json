@@ -302,7 +302,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Successful response. Promise (object)"
+            "description": "Successful response. Promise (object) with user objects."
           }
         },
         "requestBody": {
@@ -349,7 +349,7 @@
                       "type": {
                         "type": "string",
                         "default": "",
-                        "description": "A user's DAP ID"
+                        "description": "DAP object type to fetch"
                       },
                       "options": {
                         "title": "Options",
@@ -381,6 +381,447 @@
                             "description": "Exlusive skip"
                           }
                         }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/findDataForBlock": {
+      "post": {
+        "operationId": "findDataForBlock",
+        "deprecated": false,
+        "summary": "findDataForBlock",
+        "description": "Finds relevant data in a specific block for addresses encoded in a bloom filter",
+        "tags": [
+          "L1"
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response. An object containing block headers."
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "method",
+                  "id",
+                  "jsonrpc",
+                  "params"
+                ],
+                "properties": {
+                  "method": {
+                    "type": "string",
+                    "default": "findDataForBlock",
+                    "description": "Method name"
+                  },
+                  "id": {
+                    "type": "integer",
+                    "default": 1,
+                    "format": "int32",
+                    "description": "Request ID"
+                  },
+                  "jsonrpc": {
+                    "type": "string",
+                    "default": "2.0",
+                    "description": "JSON-RPC Version (2.0)"
+                  },
+                  "params": {
+                    "title": "Parameters",
+                    "type": "object",
+                    "required": [
+                      "filter"
+                    ],
+                    "properties": {
+                      "filter": {
+                        "type": "string",
+                        "default": "",
+                        "description": "A bloom filter"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/generate": {
+      "post": {
+        "operationId": "generate",
+        "deprecated": false,
+        "summary": "generate",
+        "description": "Generates blocks on demand",
+        "tags": [
+          "L1"
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response. Promise (string array) containing strings of block hashes."
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "method",
+                  "id",
+                  "jsonrpc",
+                  "params"
+                ],
+                "properties": {
+                  "method": {
+                    "type": "string",
+                    "default": "generate",
+                    "description": "Method name"
+                  },
+                  "id": {
+                    "type": "integer",
+                    "default": 1,
+                    "format": "int32",
+                    "description": "Request ID"
+                  },
+                  "jsonrpc": {
+                    "type": "string",
+                    "default": "2.0",
+                    "description": "JSON-RPC Version (2.0)"
+                  },
+                  "params": {
+                    "title": "Parameters",
+                    "type": "object",
+                    "required": [
+                      "amount"
+                    ],
+                    "properties": {
+                      "amount": {
+                        "type": "integer",
+                        "default": 1,
+                        "description": "Number of blocks to generate"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/getAddressSummary": {
+      "post": {
+        "operationId": "getAddressSummary",
+        "deprecated": false,
+        "summary": "getAddressSummary",
+        "description": "Get an address summary given an address",
+        "tags": [
+          "L1"
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response. Promise (object) containing summary details for the requested address."
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "method",
+                  "id",
+                  "jsonrpc",
+                  "params"
+                ],
+                "properties": {
+                  "method": {
+                    "type": "string",
+                    "default": "getAddressSummary",
+                    "description": "Method name"
+                  },
+                  "id": {
+                    "type": "integer",
+                    "default": 1,
+                    "format": "int32",
+                    "description": "Request ID"
+                  },
+                  "jsonrpc": {
+                    "type": "string",
+                    "default": "2.0",
+                    "description": "JSON-RPC Version (2.0)"
+                  },
+                  "params": {
+                    "title": "Parameters",
+                    "type": "object",
+                    "required": [
+                      "address"
+                    ],
+                    "properties": {
+                      "address": {
+                        "type": "string",
+                        "default": "yLp6ZJueuigiF4s9E1Pv8tEunDPEsjyQfd",
+                        "description": "Dash address"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/getAddressTotalReceived": {
+      "post": {
+        "operationId": "getAddressTotalReceived",
+        "deprecated": false,
+        "summary": "getAddressTotalReceived",
+        "description": "Get the total amount of duffs received by an address",
+        "tags": [
+          "L1"
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response. Promise (number) indicating the number of duffs received by the address."
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "method",
+                  "id",
+                  "jsonrpc",
+                  "params"
+                ],
+                "properties": {
+                  "method": {
+                    "type": "string",
+                    "default": "getAddressTotalReceived",
+                    "description": "Method name"
+                  },
+                  "id": {
+                    "type": "integer",
+                    "default": 1,
+                    "format": "int32",
+                    "description": "Request ID"
+                  },
+                  "jsonrpc": {
+                    "type": "string",
+                    "default": "2.0",
+                    "description": "JSON-RPC Version (2.0)"
+                  },
+                  "params": {
+                    "title": "Parameters",
+                    "type": "object",
+                    "required": [
+                      "address"
+                    ],
+                    "properties": {
+                      "address": {
+                        "type": "string",
+                        "default": "yLp6ZJueuigiF4s9E1Pv8tEunDPEsjyQfd",
+                        "description": "Dash address"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/getAddressTotalSent": {
+      "post": {
+        "operationId": "getAddressTotalSent",
+        "deprecated": false,
+        "summary": "getAddressTotalSent",
+        "description": "Get the total amount of duffs sent by an address",
+        "tags": [
+          "L1"
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response. Promise (number) indicating the number of duffs sent by the address."
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "method",
+                  "id",
+                  "jsonrpc",
+                  "params"
+                ],
+                "properties": {
+                  "method": {
+                    "type": "string",
+                    "default": "getAddressTotalSent",
+                    "description": "Method name"
+                  },
+                  "id": {
+                    "type": "integer",
+                    "default": 1,
+                    "format": "int32",
+                    "description": "Request ID"
+                  },
+                  "jsonrpc": {
+                    "type": "string",
+                    "default": "2.0",
+                    "description": "JSON-RPC Version (2.0)"
+                  },
+                  "params": {
+                    "title": "Parameters",
+                    "type": "object",
+                    "required": [
+                      "address"
+                    ],
+                    "properties": {
+                      "address": {
+                        "type": "string",
+                        "default": "yLp6ZJueuigiF4s9E1Pv8tEunDPEsjyQfd",
+                        "description": "Dash address"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/getAddressUnconfirmedBalance": {
+      "post": {
+        "operationId": "getAddressUnconfirmedBalance",
+        "deprecated": false,
+        "summary": "getAddressUnconfirmedBalance",
+        "description": "Get the total unconfirmed balance for the address",
+        "tags": [
+          "L1"
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response. Promise (number) indicating the number of unconfirmed duffs for the address."
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "method",
+                  "id",
+                  "jsonrpc",
+                  "params"
+                ],
+                "properties": {
+                  "method": {
+                    "type": "string",
+                    "default": "getAddressUnconfirmedBalance",
+                    "description": "Method name"
+                  },
+                  "id": {
+                    "type": "integer",
+                    "default": 1,
+                    "format": "int32",
+                    "description": "Request ID"
+                  },
+                  "jsonrpc": {
+                    "type": "string",
+                    "default": "2.0",
+                    "description": "JSON-RPC Version (2.0)"
+                  },
+                  "params": {
+                    "title": "Parameters",
+                    "type": "object",
+                    "required": [
+                      "address"
+                    ],
+                    "properties": {
+                      "address": {
+                        "type": "string",
+                        "default": "yLp6ZJueuigiF4s9E1Pv8tEunDPEsjyQfd",
+                        "description": "Dash address"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/getBalance": {
+      "post": {
+        "operationId": "getBalance",
+        "deprecated": false,
+        "summary": "getBalance",
+        "description": "Get the calculated balance for the address",
+        "tags": [
+          "L1"
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response. Promise (number) indicating the balance of the address."
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "method",
+                  "id",
+                  "jsonrpc",
+                  "params"
+                ],
+                "properties": {
+                  "method": {
+                    "type": "string",
+                    "default": "getBalance",
+                    "description": "Method name"
+                  },
+                  "id": {
+                    "type": "integer",
+                    "default": 1,
+                    "format": "int32",
+                    "description": "Request ID"
+                  },
+                  "jsonrpc": {
+                    "type": "string",
+                    "default": "2.0",
+                    "description": "JSON-RPC Version (2.0)"
+                  },
+                  "params": {
+                    "title": "Parameters",
+                    "type": "object",
+                    "required": [
+                      "address"
+                    ],
+                    "properties": {
+                      "address": {
+                        "type": "string",
+                        "default": "yLp6ZJueuigiF4s9E1Pv8tEunDPEsjyQfd",
+                        "description": "Dash address"
                       }
                     }
                   }
@@ -684,6 +1125,69 @@
                         "type": "string",
                         "default": "",
                         "description": "Either a username or a user's registration tx id"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/loadBloomFilter": {
+      "post": {
+        "operationId": "loadBloomFilter",
+        "deprecated": false,
+        "summary": "loadBloomFilter",
+        "description": "Load a bloom filter",
+        "tags": [
+          "L1"
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response. Promise (boolean) indicating if the filter was successfully loaded."
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "method",
+                  "id",
+                  "jsonrpc",
+                  "params"
+                ],
+                "properties": {
+                  "method": {
+                    "type": "string",
+                    "default": "loadBloomFilter",
+                    "description": "Method name"
+                  },
+                  "id": {
+                    "type": "integer",
+                    "default": 1,
+                    "format": "int32",
+                    "description": "Request ID"
+                  },
+                  "jsonrpc": {
+                    "type": "string",
+                    "default": "2.0",
+                    "description": "JSON-RPC Version (2.0)"
+                  },
+                  "params": {
+                    "title": "Parameters",
+                    "type": "object",
+                    "required": [
+                      "filter"
+                    ],
+                    "properties": {
+                      "filter": {
+                        "type": "string",
+                        "default": "",
+                        "description": "Filter to load"
                       }
                     }
                   }
