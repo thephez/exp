@@ -406,17 +406,6 @@
       }
     }
   },
-  "definitions": {
-    "address": {
-      "type": "object",
-      "properties": {
-        "street_address": { "type": "string" },
-        "city":           { "type": "string" },
-        "state":          { "type": "string" }
-      },
-      "required": ["street_address", "city", "state"]
-    }
-  },
   "x-send-defaults": true,
   "x-headers": [],
   "x-explorer-enabled": true,
