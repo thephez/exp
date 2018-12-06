@@ -359,6 +359,26 @@
                             "type": "string",
                             "default": "",
                             "description": "Mongo-like query"
+                          },
+                          "orderBy": {
+                            "type": "string",
+                            "default": "",
+                            "description": "Mongo-like sort field"
+                          },
+                          "limit": {
+                            "type": "integer",
+                            "default": "",
+                            "description": "How many objects to fetch"
+                          },
+                          "startAt": {
+                            "type": "integer",
+                            "default": "",
+                            "description": "Number of objects to skip"
+                          },
+                          "startAfter": {
+                            "type": "integer",
+                            "default": "",
+                            "description": "Exlusive skip"
                           }
                         }
                       }
