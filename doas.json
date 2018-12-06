@@ -351,10 +351,16 @@
                         "default": "",
                         "description": "A user's DAP ID"
                       },
-                      "where": {
-                        "type": "string",
-                        "default": "",
-                        "description": "Mongo-like query"
+                      "options": {
+                        "title": "Options",
+                        "type": "object",
+                        "properties": {
+                          "where": {
+                            "type": "string",
+                            "default": "",
+                            "description": "Mongo-like query"
+                          }
+                        }
                       }
                     }
                   }
