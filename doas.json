@@ -1,14 +1,28 @@
 {
   "openapi": "3.0.0",
-  "x-api-id": "dapi-devnet",
+  "x-api-id": "dapi",
   "info": {
-    "title": "DAPI devnet",
-    "version": "0.1.0",
+    "title": "DAPI",
+    "version": "0.1.2",
     "description": "The Dash decentralized API"
   },
   "servers": [
     {
-      "url": "http://devnet-maithai.thephez.com:3000"
+      "url": "http://dapi-mainnet.dash.org:3000",
+      "description": "Dash main network"
+    },
+    {
+      "url": "http://dapi-testnet.dash.org:{port}",
+      "description": "Dash public test network",
+      "variables": {
+        "port": {
+          "default": "3000"
+        }
+      }
+    },
+    {
+      "url": "http://devnet-maithai.thephez.com:3000",
+      "description": "Dash developer network"
     }
   ],
   "paths": {
