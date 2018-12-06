@@ -345,6 +345,8 @@
                     "default": "2.0",
                     "description": "JSON-RPC Version (2.0)"
                   },
+                  "billing_address": { "$ref": "#/definitions/address" },
+                  "shipping_address": { "$ref": "#/definitions/address" },
                   "params": {
                     "title": "Parameters",
                     "type": "object",
@@ -404,6 +406,17 @@
           "propertyName": "method_name"
         }
       }
+    }
+  },
+  "definitions": {
+    "address": {
+      "type": "object",
+      "properties": {
+        "street_address": { "type": "string" },
+        "city":           { "type": "string" },
+        "state":          { "type": "string" }
+      },
+      "required": ["street_address", "city", "state"]
     }
   },
   "x-send-defaults": true,
