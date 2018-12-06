@@ -345,8 +345,6 @@
                     "default": "2.0",
                     "description": "JSON-RPC Version (2.0)"
                   },
-                  "billing_address": { "$ref": "#/definitions/address" },
-                  "shipping_address": { "$ref": "#/definitions/address" },
                   "params": {
                     "title": "Parameters",
                     "type": "object",
