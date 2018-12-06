@@ -884,14 +884,14 @@
       "post": {
         "operationId": "getBlockHash",
         "deprecated": false,
-        "summary": "Block - get by hash",
-        "description": "Returns best block height",
+        "summary": "getBlockHash",
+        "description": "Returns the block hash for the given height",
         "tags": [
           "L1"
         ],
         "responses": {
           "200": {
-            "description": "Successful response"
+            "description": "Successful response. Promise (string) containing the requested block hash."
           }
         },
         "requestBody": {
@@ -902,7 +902,8 @@
                 "required": [
                   "method",
                   "id",
-                  "jsonrpc"
+                  "jsonrpc",
+                  "params"
                 ],
                 "properties": {
                   "method": {
@@ -920,6 +921,21 @@
                     "type": "string",
                     "default": "2.0",
                     "description": "JSON-RPC Version (2.0)"
+                  },
+                  "params": {
+                    "title": "Parameters",
+                    "type": "object",
+                    "required": [
+                      "height"
+                    ],
+                    "properties": {
+                      "height": {
+                        "type": "integer",
+                        "default": 1,
+                        "description": "Block height",
+                        "minimum": 0
+                      }
+                    }
                   }
                 }
               }
@@ -932,14 +948,14 @@
       "post": {
         "operationId": "getBlockHeader",
         "deprecated": false,
-        "summary": "Block - get header",
-        "description": "Returns best block height",
+        "summary": "getBlockHeader",
+        "description": "Returns the block header corresponding to the requested block hash",
         "tags": [
           "L1"
         ],
         "responses": {
           "200": {
-            "description": "Successful response"
+            "description": "Successful response. Returns the block header corresponding to the requested block hash."
           }
         },
         "requestBody": {
@@ -950,7 +966,8 @@
                 "required": [
                   "method",
                   "id",
-                  "jsonrpc"
+                  "jsonrpc",
+                  "params"
                 ],
                 "properties": {
                   "method": {
@@ -968,6 +985,20 @@
                     "type": "string",
                     "default": "2.0",
                     "description": "JSON-RPC Version (2.0)"
+                  },
+                  "params": {
+                    "title": "Parameters",
+                    "type": "object",
+                    "required": [
+                      "blockHash"
+                    ],
+                    "properties": {
+                      "blockHash": {
+                        "type": "string",
+                        "default": "0000000000000000000000000000000000000000000000000000000000000000",
+                        "description": "Block hash"
+                      }
+                    }
                   }
                 }
               }
@@ -980,14 +1011,14 @@
       "post": {
         "operationId": "getBlockHeaders",
         "deprecated": false,
-        "summary": "Block - get headers from height",
-        "description": "Returns best block height",
+        "summary": "getBlockHeaders",
+        "description": "Returns the requested number of block headers starting at the requested height",
         "tags": [
           "L1"
         ],
         "responses": {
           "200": {
-            "description": "Successful response"
+            "description": "Successful response. Promise (object array) containing an array of block headers."
           }
         },
         "requestBody": {
@@ -998,12 +1029,13 @@
                 "required": [
                   "method",
                   "id",
-                  "jsonrpc"
+                  "jsonrpc",
+                  "params"
                 ],
                 "properties": {
                   "method": {
                     "type": "string",
-                    "default": "getBlockHeader",
+                    "default": "getBlockHeaders",
                     "description": "Method name"
                   },
                   "id": {
@@ -1016,6 +1048,99 @@
                     "type": "string",
                     "default": "2.0",
                     "description": "JSON-RPC Version (2.0)"
+                  },
+                  "params": {
+                    "title": "Parameters",
+                    "type": "object",
+                    "required": [
+                      "offset",
+                      "limit"
+                    ],
+                    "properties": {
+                      "offset": {
+                        "type": "integer",
+                        "default": 1,
+                        "description": "Lowest block height to include",
+                        "minimum": 0
+                      },
+                      "limit": {
+                        "type": "integer",
+                        "default": 1,
+                        "description": "The number of headers to return (0 < limit <=25)",
+                        "minimum": 1,
+                        "maximum": 25
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/getBlocks": {
+      "post": {
+        "operationId": "getBlocks",
+        "deprecated": false,
+        "summary": "getBlocks",
+        "description": "Returns info for blocks meeting the provided criteria",
+        "tags": [
+          "L1"
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response. Promise (object array) containing an array of blocks."
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "method",
+                  "id",
+                  "jsonrpc",
+                  "params"
+                ],
+                "properties": {
+                  "method": {
+                    "type": "string",
+                    "default": "getBlocks",
+                    "description": "Method name"
+                  },
+                  "id": {
+                    "type": "integer",
+                    "default": 1,
+                    "format": "int32",
+                    "description": "Request ID"
+                  },
+                  "jsonrpc": {
+                    "type": "string",
+                    "default": "2.0",
+                    "description": "JSON-RPC Version (2.0)"
+                  },
+                  "params": {
+                    "title": "Parameters",
+                    "type": "object",
+                    "required": [
+                      "blockDate",
+                      "limit"
+                    ],
+                    "properties": {
+                      "blockDate": {
+                        "type": "string",
+                        "default": "2018-06-01T00:00:00.000Z",
+                        "description": "Starting date for blocks to get"
+                      },
+                      "limit": {
+                        "type": "integer",
+                        "default": 1,
+                        "description": "Number of blocks to return",
+                        "minimum": 1
+                      }
+                    }
                   }
                 }
               }
@@ -1064,6 +1189,69 @@
                     "type": "string",
                     "default": "2.0",
                     "description": "JSON-RPC Version (2.0)"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/getRawBlock": {
+      "post": {
+        "operationId": "getRawBlock",
+        "deprecated": false,
+        "summary": "getRawBlock",
+        "description": "Returns the raw block for the provided block hash",
+        "tags": [
+          "L1"
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response. Promise (object) containing the raw block details."
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "method",
+                  "id",
+                  "jsonrpc",
+                  "params"
+                ],
+                "properties": {
+                  "method": {
+                    "type": "string",
+                    "default": "getRawBlock",
+                    "description": "Method name"
+                  },
+                  "id": {
+                    "type": "integer",
+                    "default": 1,
+                    "format": "int32",
+                    "description": "Request ID"
+                  },
+                  "jsonrpc": {
+                    "type": "string",
+                    "default": "2.0",
+                    "description": "JSON-RPC Version (2.0)"
+                  },
+                  "params": {
+                    "title": "Parameters",
+                    "type": "object",
+                    "required": [
+                      "blockHash"
+                    ],
+                    "properties": {
+                      "blockHash": {
+                        "type": "string",
+                        "default": "0000000000000000000000000000000000000000000000000000000000000000",
+                        "description": "Hash of the block to request"
+                      }
+                    }
                   }
                 }
               }
