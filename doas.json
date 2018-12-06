@@ -37,14 +37,14 @@
       "post": {
         "operationId": "addToBloomFilter",
         "deprecated": false,
-        "summary": "Add a bloom filter element",
+        "summary": "Bloom filter - add element",
         "description": "Adds an element to an existing bloom filter",
         "tags": [
           "L1"
         ],
         "responses": {
           "200": {
-            "description": "Successful response (boolean promise indicating if the element was successfully added)"
+            "description": "Successful response. Boolean promise indicating if the element was successfully added."
           }
         },
         "requestBody": {
@@ -106,14 +106,14 @@
       "post": {
         "operationId": "clearBloomFilter",
         "deprecated": false,
-        "summary": "Clear the bloom filter",
+        "summary": "Bloom filter - clear",
         "description": "Clear the bloom filter",
         "tags": [
           "L1"
         ],
         "responses": {
           "200": {
-            "description": "Successful response (boolean promise indicating if the filter was successfully cleared)"
+            "description": "Successful response. Boolean promise indicating if the filter was successfully cleared."
           }
         },
         "requestBody": {
@@ -130,7 +130,7 @@
                 "properties": {
                   "method": {
                     "type": "string",
-                    "default": "addToBloomFilter",
+                    "default": "clearBloomFilter",
                     "description": "Method name"
                   },
                   "id": {
@@ -148,19 +148,13 @@
                     "title": "Parameters",
                     "type": "object",
                     "required": [
-                      "originalFilter",
-                      "element"
+                      "filter"
                     ],
                     "properties": {
                       "originalFilter": {
                         "type": "string",
                         "default": "",
                         "description": "Original filter"
-                      },
-                      "element": {
-                        "type": "string",
-                        "default": "",
-                        "description": "Element to add to filter"
                       }
                     }
                   }
@@ -238,7 +232,7 @@
       "post": {
         "operationId": "getbestblockheight",
         "deprecated": false,
-        "summary": "getBestBlockHeight",
+        "summary": "Block - get best height",
         "description": "Returns best block height",
         "tags": [
           "L1"
@@ -262,6 +256,150 @@
                   "method": {
                     "type": "string",
                     "default": "getBestBlockHeight",
+                    "description": "Method name"
+                  },
+                  "id": {
+                    "type": "integer",
+                    "default": 1,
+                    "format": "int32",
+                    "description": "Request ID"
+                  },
+                  "jsonrpc": {
+                    "type": "string",
+                    "default": "2.0",
+                    "description": "JSON-RPC Version (2.0)"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/getBlockHash": {
+      "post": {
+        "operationId": "getBlockHash",
+        "deprecated": false,
+        "summary": "Block - get by hash",
+        "description": "Returns best block height",
+        "tags": [
+          "L1"
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "method",
+                  "id",
+                  "jsonrpc"
+                ],
+                "properties": {
+                  "method": {
+                    "type": "string",
+                    "default": "getBlockHash",
+                    "description": "Method name"
+                  },
+                  "id": {
+                    "type": "integer",
+                    "default": 1,
+                    "format": "int32",
+                    "description": "Request ID"
+                  },
+                  "jsonrpc": {
+                    "type": "string",
+                    "default": "2.0",
+                    "description": "JSON-RPC Version (2.0)"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/getBlockHeader": {
+      "post": {
+        "operationId": "getBlockHeader",
+        "deprecated": false,
+        "summary": "Block - get header",
+        "description": "Returns best block height",
+        "tags": [
+          "L1"
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "method",
+                  "id",
+                  "jsonrpc"
+                ],
+                "properties": {
+                  "method": {
+                    "type": "string",
+                    "default": "getBlockHeader",
+                    "description": "Method name"
+                  },
+                  "id": {
+                    "type": "integer",
+                    "default": 1,
+                    "format": "int32",
+                    "description": "Request ID"
+                  },
+                  "jsonrpc": {
+                    "type": "string",
+                    "default": "2.0",
+                    "description": "JSON-RPC Version (2.0)"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/getBlockHeaders": {
+      "post": {
+        "operationId": "getBlockHeaders",
+        "deprecated": false,
+        "summary": "Block - get headers from height",
+        "description": "Returns best block height",
+        "tags": [
+          "L1"
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "method",
+                  "id",
+                  "jsonrpc"
+                ],
+                "properties": {
+                  "method": {
+                    "type": "string",
+                    "default": "getBlockHeader",
                     "description": "Method name"
                   },
                   "id": {
