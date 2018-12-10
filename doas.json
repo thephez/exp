@@ -8,11 +8,23 @@
   },
   "servers": [
     {
+      "url": "http://devnet-maithai.thephez.com:3000",
+      "description": "Dash developer network"
+    },
+    {
+      "url": "http://dapi-mainnet.dash.org:3000",
+      "description": "Dash main network"
+    },
+    {
+      "url": "http://dapi-testnet.dash.org:3000",
+      "description": "Dash public test network"
+    },
+    {
       "url": "{url}:{port}",
       "description": "User-defined network",
       "variables": {
         "url": {
-          "default": "http://dapi.dash.org"
+          "default": "http://devnet.example.com"
         },
         "port": {
           "default": "3000"
