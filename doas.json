@@ -211,10 +211,10 @@
                     "title": "Parameters",
                     "type": "object",
                     "required": [
-                      "nbBlocks"
+                      "blocks"
                     ],
                     "properties": {
-                      "nbBlocks": {
+                      "blocks": {
                         "type": "integer",
                         "default": 1,
                         "description": "Number of blocks for fee estimate"
