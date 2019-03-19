@@ -2,7 +2,7 @@
   "openapi": "3.0.0",
   "x-api-id": "dapi",
   "info": {
-    "title": "DAPI (Porto)",
+    "title": "DAPI-Porto",
     "version": "0.3.0",
     "description": "Dash Decentralized API (DAPI)"
   },
