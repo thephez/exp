@@ -3,7 +3,7 @@
   "x-api-id": "dapi",
   "info": {
     "title": "DAPI",
-    "version": "0.5.0",
+    "version": "0.6.1",
     "description": "Dash Decentralized API (DAPI)"
   },
   "servers": [
@@ -25,138 +25,6 @@
     }
   ],
   "paths": {
-    "/addToBloomFilter": {
-      "post": {
-        "operationId": "addToBloomFilter",
-        "deprecated": false,
-        "summary": "addToBloomFilter",
-        "description": "Adds an element to an existing bloom filter",
-        "tags": [
-          "L1"
-        ],
-        "responses": {
-          "200": {
-            "description": "Successful response. Promise (boolean) indicating if the element was successfully added."
-          }
-        },
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "required": [
-                  "method",
-                  "id",
-                  "jsonrpc",
-                  "params"
-                ],
-                "properties": {
-                  "method": {
-                    "type": "string",
-                    "default": "addToBloomFilter",
-                    "description": "Method name"
-                  },
-                  "id": {
-                    "type": "integer",
-                    "default": 1,
-                    "format": "int32",
-                    "description": "Request ID"
-                  },
-                  "jsonrpc": {
-                    "type": "string",
-                    "default": "2.0",
-                    "description": "JSON-RPC Version (2.0)"
-                  },
-                  "params": {
-                    "title": "Parameters",
-                    "type": "object",
-                    "required": [
-                      "originalFilter",
-                      "element"
-                    ],
-                    "properties": {
-                      "originalFilter": {
-                        "type": "string",
-                        "default": "",
-                        "description": "Original filter"
-                      },
-                      "element": {
-                        "type": "string",
-                        "default": "",
-                        "description": "Element to add to filter"
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/clearBloomFilter": {
-      "post": {
-        "operationId": "clearBloomFilter",
-        "deprecated": false,
-        "summary": "clearBloomFilter",
-        "description": "Clear the bloom filter",
-        "tags": [
-          "L1"
-        ],
-        "responses": {
-          "200": {
-            "description": "Successful response. Promise (boolean) indicating if the filter was successfully cleared."
-          }
-        },
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "required": [
-                  "method",
-                  "id",
-                  "jsonrpc",
-                  "params"
-                ],
-                "properties": {
-                  "method": {
-                    "type": "string",
-                    "default": "clearBloomFilter",
-                    "description": "Method name"
-                  },
-                  "id": {
-                    "type": "integer",
-                    "default": 1,
-                    "format": "int32",
-                    "description": "Request ID"
-                  },
-                  "jsonrpc": {
-                    "type": "string",
-                    "default": "2.0",
-                    "description": "JSON-RPC Version (2.0)"
-                  },
-                  "params": {
-                    "title": "Parameters",
-                    "type": "object",
-                    "required": [
-                      "filter"
-                    ],
-                    "properties": {
-                      "originalFilter": {
-                        "type": "string",
-                        "default": "",
-                        "description": "Original filter"
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    },
     "/estimateFee": {
       "post": {
         "operationId": "estimateFee",
@@ -373,69 +241,6 @@
                             "description": "Exlusive skip"
                           }
                         }
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/findDataForBlock": {
-      "post": {
-        "operationId": "findDataForBlock",
-        "deprecated": false,
-        "summary": "findDataForBlock",
-        "description": "Finds relevant data in a specific block for addresses encoded in a bloom filter",
-        "tags": [
-          "L1"
-        ],
-        "responses": {
-          "200": {
-            "description": "Successful response. An object containing block headers."
-          }
-        },
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "required": [
-                  "method",
-                  "id",
-                  "jsonrpc",
-                  "params"
-                ],
-                "properties": {
-                  "method": {
-                    "type": "string",
-                    "default": "findDataForBlock",
-                    "description": "Method name"
-                  },
-                  "id": {
-                    "type": "integer",
-                    "default": 1,
-                    "format": "int32",
-                    "description": "Request ID"
-                  },
-                  "jsonrpc": {
-                    "type": "string",
-                    "default": "2.0",
-                    "description": "JSON-RPC Version (2.0)"
-                  },
-                  "params": {
-                    "title": "Parameters",
-                    "type": "object",
-                    "required": [
-                      "filter"
-                    ],
-                    "properties": {
-                      "filter": {
-                        "type": "string",
-                        "default": "",
-                        "description": "A bloom filter"
                       }
                     }
                   }
@@ -1128,17 +933,28 @@
                     ],
                     "properties": {
                       "offset": {
-                        "type": "integer",
-                        "default": 1,
-                        "description": "Lowest block height to include",
-                        "minimum": 0
+                        "oneOf": [
+                          {
+                            "type": "integer",
+                            "description": "Lowest block height to include"
+                          },
+                          {
+                            "type": "string",
+                            "description": "Lowest block hash to include"
+                          }
+                        ]
                       },
                       "limit": {
                         "type": "integer",
                         "default": 1,
-                        "description": "The number of headers to return (0 < limit <=25)",
+                        "description": "The number of headers to return (0 < limit <=2000)",
                         "minimum": 1,
-                        "maximum": 25
+                        "maximum": 2000
+                      },
+                      "verbose": {
+                        "type": "boolean",
+                        "default": false,
+                        "description": "set true to get headers as deserialized json"
                       }
                     }
                   }
@@ -1606,69 +1422,6 @@
         }
       }
     },
-    "/getSpvData": {
-      "post": {
-        "operationId": "getSpvData",
-        "deprecated": false,
-        "summary": "getSpvData",
-        "description": "Returns block headers",
-        "tags": [
-          "L1"
-        ],
-        "responses": {
-          "200": {
-            "description": "Successful response. An object containing block headers."
-          }
-        },
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "required": [
-                  "method",
-                  "id",
-                  "jsonrpc",
-                  "params"
-                ],
-                "properties": {
-                  "method": {
-                    "type": "string",
-                    "default": "getSpvData",
-                    "description": "Method name"
-                  },
-                  "id": {
-                    "type": "integer",
-                    "default": 1,
-                    "format": "int32",
-                    "description": "Request ID"
-                  },
-                  "jsonrpc": {
-                    "type": "string",
-                    "default": "2.0",
-                    "description": "JSON-RPC Version (2.0)"
-                  },
-                  "params": {
-                    "title": "Parameters",
-                    "type": "object",
-                    "required": [
-                      "filter"
-                    ],
-                    "properties": {
-                      "filter": {
-                        "type": "string",
-                        "default": "",
-                        "description": "A bloom filter"
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    },
     "/getStatus": {
       "post": {
         "operationId": "getStatus",
@@ -2026,69 +1779,6 @@
                         "type": "string",
                         "default": "DashUser001",
                         "description": "Either a username or a user's registration tx id"
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/loadBloomFilter": {
-      "post": {
-        "operationId": "loadBloomFilter",
-        "deprecated": false,
-        "summary": "loadBloomFilter",
-        "description": "Load a bloom filter",
-        "tags": [
-          "L1"
-        ],
-        "responses": {
-          "200": {
-            "description": "Successful response. Promise (boolean) indicating if the filter was successfully loaded."
-          }
-        },
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "required": [
-                  "method",
-                  "id",
-                  "jsonrpc",
-                  "params"
-                ],
-                "properties": {
-                  "method": {
-                    "type": "string",
-                    "default": "loadBloomFilter",
-                    "description": "Method name"
-                  },
-                  "id": {
-                    "type": "integer",
-                    "default": 1,
-                    "format": "int32",
-                    "description": "Request ID"
-                  },
-                  "jsonrpc": {
-                    "type": "string",
-                    "default": "2.0",
-                    "description": "JSON-RPC Version (2.0)"
-                  },
-                  "params": {
-                    "title": "Parameters",
-                    "type": "object",
-                    "required": [
-                      "filter"
-                    ],
-                    "properties": {
-                      "filter": {
-                        "type": "string",
-                        "default": "",
-                        "description": "Filter to load"
                       }
                     }
                   }
