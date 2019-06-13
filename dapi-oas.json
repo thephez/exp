@@ -3,7 +3,7 @@
   "x-api-id": "dapi",
   "info": {
     "title": "DAPI",
-    "version": "0.3.3",
+    "version": "0.4.0",
     "description": "Dash Decentralized API (DAPI)"
   },
   "servers": [
@@ -220,11 +220,11 @@
         }
       }
     },
-    "/fetchDapContract": {
+    "/fetchContract": {
       "post": {
-        "operationId": "fetchDapContract",
+        "operationId": "fetchContract",
         "deprecated": false,
-        "summary": "fetchDapContract",
+        "summary": "fetchContract",
         "description": "Fetch a user's DAP space",
         "tags": [
           "L2"
@@ -248,7 +248,7 @@
                 "properties": {
                   "method": {
                     "type": "string",
-                    "default": "fetchDapContract",
+                    "default": "fetchContract",
                     "description": "Method name"
                   },
                   "id": {
@@ -283,11 +283,11 @@
         }
       }
     },
-    "/fetchDapObjects": {
+    "/fetchDocuments": {
       "post": {
-        "operationId": "fetchDapObjects",
+        "operationId": "fetchDocuments",
         "deprecated": false,
-        "summary": "fetchDapObjects",
+        "summary": "fetchDocuments",
         "description": "Fetches user objects for a given condition",
         "tags": [
           "L2"
@@ -311,7 +311,7 @@
                 "properties": {
                   "method": {
                     "type": "string",
-                    "default": "fetchDapObjects",
+                    "default": "fetchDocuments",
                     "description": "Method name"
                   },
                   "id": {
