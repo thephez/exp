@@ -2076,5 +2076,12 @@
     "python"
   ],
   "components": {},
-  "tags": []
+  "tags": [],
+  "x-code-samples": [
+    "Shell",
+    "PHP",
+    "Ruby",
+    "JavaScript",
+    "Python"
+  ],  
 }
