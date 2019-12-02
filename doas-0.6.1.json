@@ -304,6 +304,7 @@
                         "oneOf": [
                           {
                             "type": "string",
+                            "default": "yfwdRuXgw6QcusYEjqzBmM3vY5shFSWyC4",
                             "description": "Dash address"
                           },
                           {
