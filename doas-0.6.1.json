@@ -807,7 +807,7 @@
                     "properties": {
                       "blockHash": {
                         "type": "string",
-                        "default": "0000000000000000000000000000000000000000000000000000000000000000",
+                        "default": "0000047d24635e347be3aaaeb66c26be94901a2f962feccd4f95090191f208c1",
                         "description": "Block hash"
                       }
                     }
