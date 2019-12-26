@@ -8,7 +8,7 @@
   },
   "servers": [
     {
-      "url": "http://18.236.131.253:3000",
+      "url": "http://dash.thephez.com:3999",
       "description": "Testnet"
     },
     {
@@ -32,7 +32,7 @@
         "summary": "estimateFee",
         "description": "Estimates the transaction fee necessary for confirmation to occur within a certain number of blocks",
         "tags": [
-          "Core-Endpoints"
+          "L1"
         ],
         "responses": {
           "200": {
@@ -95,7 +95,7 @@
         "summary": "fetchContract",
         "description": "Fetch a user's DAP space",
         "tags": [
-          "Platform-Endpoints"
+          "L2"
         ],
         "responses": {
           "200": {
@@ -158,7 +158,7 @@
         "summary": "fetchDocuments",
         "description": "Fetches user objects for a given condition",
         "tags": [
-          "Platform-Endpoints"
+          "L2"
         ],
         "responses": {
           "200": {
@@ -258,7 +258,7 @@
         "summary": "getAddressSummary",
         "description": "Get an address summary given an address",
         "tags": [
-          "Core-Endpoints"
+          "L1"
         ],
         "responses": {
           "200": {
@@ -352,7 +352,7 @@
         "summary": "getAddressTotalReceived",
         "description": "Get the total amount of duffs received by an address",
         "tags": [
-          "Core-Endpoints"
+          "L1"
         ],
         "responses": {
           "200": {
@@ -415,7 +415,7 @@
         "summary": "getAddressTotalSent",
         "description": "Get the total amount of duffs sent by an address",
         "tags": [
-          "Core-Endpoints"
+          "L1"
         ],
         "responses": {
           "200": {
@@ -478,7 +478,7 @@
         "summary": "getAddressUnconfirmedBalance",
         "description": "Get the total unconfirmed balance for the address",
         "tags": [
-          "Core-Endpoints"
+          "L1"
         ],
         "responses": {
           "200": {
@@ -541,7 +541,7 @@
         "summary": "getBalance",
         "description": "Get the calculated balance for the address",
         "tags": [
-          "Core-Endpoints"
+          "L1"
         ],
         "responses": {
           "200": {
@@ -604,7 +604,7 @@
         "summary": "getBestBlockHash",
         "description": "Returns block hash of the chaintip",
         "tags": [
-          "Core-Endpoints"
+          "L1"
         ],
         "responses": {
           "200": {
@@ -652,7 +652,7 @@
         "summary": "getBestBlockHeight",
         "description": "Returns the best block height",
         "tags": [
-          "Core-Endpoints"
+          "L1"
         ],
         "responses": {
           "200": {
@@ -700,7 +700,7 @@
         "summary": "getBlockHash",
         "description": "Returns the block hash for the given height",
         "tags": [
-          "Core-Endpoints"
+          "L1"
         ],
         "responses": {
           "200": {
@@ -764,7 +764,7 @@
         "summary": "getBlockHeader",
         "description": "Returns the block header corresponding to the requested block hash",
         "tags": [
-          "Core-Endpoints"
+          "L1"
         ],
         "responses": {
           "200": {
@@ -827,7 +827,7 @@
         "summary": "getBlockHeaders",
         "description": "Returns the requested number of block headers starting at the requested height",
         "tags": [
-          "Core-Endpoints"
+          "L1"
         ],
         "responses": {
           "200": {
@@ -910,7 +910,7 @@
         "summary": "getBlocks",
         "description": "Returns info for blocks meeting the provided criteria",
         "tags": [
-          "Core-Endpoints"
+          "L1"
         ],
         "responses": {
           "200": {
@@ -980,7 +980,7 @@
         "summary": "getHistoricBlockchainDataSyncStatus",
         "description": "Returns historic blockchain data sync status",
         "tags": [
-          "Core-Endpoints"
+          "L1"
         ],
         "responses": {
           "200": {
@@ -1028,7 +1028,7 @@
         "summary": "getMempoolInfo",
         "description": "Returns mempool info object",
         "tags": [
-          "Core-Endpoints"
+          "L1"
         ],
         "responses": {
           "200": {
@@ -1076,7 +1076,7 @@
         "summary": "getMnListDiff",
         "description": "Returns masternode list diff for the provided block hashes",
         "tags": [
-          "Core-Endpoints"
+          "L1"
         ],
         "responses": {
           "200": {
@@ -1145,7 +1145,7 @@
         "summary": "getPeerDataSyncStatus",
         "description": "Returns peer data sync status",
         "tags": [
-          "Core-Endpoints"
+          "L1"
         ],
         "responses": {
           "200": {
@@ -1193,7 +1193,7 @@
         "summary": "getQuorum",
         "description": "Returns a user quorum (LLMQ)",
         "tags": [
-          "Core-Endpoints"
+          "L1"
         ],
         "responses": {
           "200": {
@@ -1256,7 +1256,7 @@
         "summary": "getRawBlock",
         "description": "Returns the raw block for the provided block hash",
         "tags": [
-          "Core-Endpoints"
+          "L1"
         ],
         "responses": {
           "200": {
@@ -1319,7 +1319,7 @@
         "summary": "getStatus",
         "description": "Returns status based on query parameter",
         "tags": [
-          "Core-Endpoints"
+          "L1"
         ],
         "responses": {
           "200": {
@@ -1382,7 +1382,7 @@
         "summary": "getTransactionById",
         "description": "Returns transaction for the given hash",
         "tags": [
-          "Core-Endpoints"
+          "L1"
         ],
         "responses": {
           "200": {
@@ -1445,7 +1445,7 @@
         "summary": "getTransactionsByAddress",
         "description": "Returns all transaction related to the given address",
         "tags": [
-          "Core-Endpoints"
+          "L1"
         ],
         "responses": {
           "200": {
@@ -1534,7 +1534,7 @@
         "summary": "getUTXO",
         "description": "Returns unspent outputs for the given address",
         "tags": [
-          "Core-Endpoints"
+          "L1"
         ],
         "responses": {
           "200": {
@@ -1623,7 +1623,7 @@
         "summary": "getUser",
         "description": "Returns a blockchain user",
         "tags": [
-          "Platform-Endpoints"
+          "L2"
         ],
         "responses": {
           "200": {
@@ -1686,7 +1686,7 @@
         "summary": "searchUsers",
         "description": "Adds an element to an existing bloom filter",
         "tags": [
-          "Platform-Endpoints"
+          "L2"
         ],
         "responses": {
           "200": {
@@ -1764,7 +1764,7 @@
         "summary": "sendRawIxTransaction",
         "description": "Sends raw InstantSend transaction and returns the transaction ID",
         "tags": [
-          "Core-Endpoints"
+          "L1"
         ],
         "responses": {
           "200": {
@@ -1827,7 +1827,7 @@
         "summary": "sendRawTransaction",
         "description": "Sends raw transaction and returns the transaction ID",
         "tags": [
-          "Core-Endpoints"
+          "L1"
         ],
         "responses": {
           "200": {
@@ -1890,7 +1890,7 @@
         "summary": "sendRawTransition",
         "description": "Sends raw state transition to the network",
         "tags": [
-          "Platform-Endpoints"
+          "L2"
         ],
         "responses": {
           "200": {
