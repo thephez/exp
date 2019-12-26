@@ -8,7 +8,7 @@
   },
   "servers": [
     {
-      "url": "http://dash.thephez.com:3999",
+      "url": "http://18.236.131.253:3000",
       "description": "Testnet"
     },
     {
