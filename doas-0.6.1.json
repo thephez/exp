@@ -8,8 +8,8 @@
   },
   "servers": [
     {
-      "url": "http://dash.thephez.com:3999",
-      "description": "Testnet"
+      "url": "http://evonet.thephez.com:3000",
+      "description": "Evonet"
     },
     {
       "url": "{url}:{port}",
