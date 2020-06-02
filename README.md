@@ -3,9 +3,9 @@
 Misc stuff
 
 ``` bash
-test
+ls -a
 ```
 
 ```bash
-test
+ls -a
 ```
