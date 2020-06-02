@@ -3,9 +3,17 @@
 Misc stuff
 
 ``` bash
-ls -a
+#!/bin/bash
+
+echo -e "Please enter your name: "
+read name
+echo "Nice to meet you $name"
 ```
 
 ```bash
-ls -a
+#!/bin/bash
+
+echo -e "Please enter your name: "
+read name
+echo "Nice to meet you $name"
 ```
