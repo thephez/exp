@@ -25,7 +25,7 @@
     }
   ],
   "paths": {
-    "/getBestBlockHash": {
+    "/": {
       "post": {
         "operationId": "getBestBlockHash",
         "deprecated": false,
@@ -73,7 +73,7 @@
         }
       }
     },
-    "/getBlockHash": {
+    "/": {
       "post": {
         "operationId": "getBlockHash",
         "deprecated": false,
@@ -137,7 +137,7 @@
         }
       }
     },
-    "/getMnListDiff": {
+    "/": {
       "post": {
         "operationId": "getMnListDiff",
         "deprecated": false,
