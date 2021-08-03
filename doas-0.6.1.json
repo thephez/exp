@@ -3,7 +3,7 @@
   "x-api-id": "dapi",
   "info": {
     "title": "DAPI",
-    "version": "0.6.1",
+    "version": "0.20.0",
     "description": "Dash Decentralized API (DAPI)"
   },
   "servers": [
